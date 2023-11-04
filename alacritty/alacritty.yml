@@ -1,0 +1,57 @@
+# Windows 11 + Arch WSL config
+# should be in %APPDATA%\alacritty\alacritty.yml
+window:
+    startup_mode: Maximized
+shell:
+    program: arch
+font:
+    normal:
+        family: JetBrainsMonoNL Nerd Font
+        style: Regular
+    bold:
+        family: JetBrainsMonoNL Nerd Font
+        style: Bold
+    size: 9.5
+key_bindings:
+  - { key: Space, mods: Control, chars: "\x00" }
+cursor:
+    hide_when_typing: true
+# Colors (Horizon Dark)
+colors:
+    cursor:
+        # If this is `false` the text cursor inverses
+        # the foreground and background colors.
+        custom_colors: true
+        # Text color when the cursor is above a character.
+        # Only used when `custom_colors` is `true`.
+        text: '0x000000'
+        # Cursor color.
+        # Only used when `custom_colors` is `true`.
+        cursor: '0xfe5e78'
+
+    # Primary colors
+    primary:
+        background: '0x1c1e26'
+        foreground: '0xe0e0e0'
+
+    # Normal colors
+    normal:
+        black: '0x16161c'
+        red: '0xe95678'
+        green: '0x29d398'
+        yellow: '0xfab795'
+        blue: '0x26bbd9'
+        magenta: '0xee64ac'
+        cyan: '0x59e1e3'
+        white: '0xd5d8da'
+
+    # Bright colors
+    bright:
+        black: '0x5b5858'
+        red: '0xec6a88'
+        green: '0x3fdaa4'
+        yellow: '0xfbc3a7'
+        blue: '0x3fc4de'
+        magenta: '0xf075b5'
+        cyan: '0x6be4e6'
+        white: '0xd5d8da'
