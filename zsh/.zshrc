@@ -11,6 +11,8 @@ export NEOVIDE_MULTIGRID=true
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias pr="cd ~/projects"
 alias pl="cd ~/projects/playground"
+# https://github.com/Lothering0/repl
+alias js="node ~/projects/repl/index.js"
 
 # Use powerline
 USE_POWERLINE="true"
