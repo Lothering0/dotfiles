@@ -1843,3 +1843,10 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+# zsh-syntax-highlighting
+ZSH_HIGHLIGHT_STYLES[command]='fg=12'
+ZSH_HIGHLIGHT_STYLES[default]='fg=2'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=5'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=5'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
