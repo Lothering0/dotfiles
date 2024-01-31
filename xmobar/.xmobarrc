@@ -1,14 +1,14 @@
-Config { font = "Ubuntu Mono Ligaturized 14"
+Config { font = "Ubuntu Mono Ligaturized 13"
        , bgColor = "#0f111a"
        , fgColor = "#a6accd"
-       , position = TopH 22
+       , position = TopH 24
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-t", " <total>%"] 10
-                    , Run Memory ["-t"," <used> MB (<usedratio>%)"] 10
-                    , Run Swap ["-t", "󰯍 <used> MB"] 10
-    		    , Run Date "%a %b %_d %Y %H:%M" "date" 10
+       , commands = [ Run Cpu ["-t", "<box type=Bottom width=1 color=#e2795b><fc=#e2795b> <total>%</fc></box>"] 10
+                    , Run Memory ["-t","<box type=Bottom width=1 color=#abcf76><fc=#abcf76> <used> MB (<usedratio>%)</fc></box>"] 10
+                    , Run Swap ["-t", "<fc=#464b5d>󰯍 <used> MB</fc>"] 10
+    		    , Run Date "%a %b %_d, %H:%M" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <fc=#b480d6>󰲒</fc> }{ <fc=#e2795b>%cpu%</fc> <fc=#abcf76>%memory%</fc> <fc=#464b5d>%swap%</fc>   %date% "
+       , template = " <fc=#b480d6>󰲒</fc> }{ %cpu%  %memory% %swap%   %date% "
        }
