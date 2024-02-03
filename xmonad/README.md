@@ -6,3 +6,11 @@ After each change run following command:
 ```sh
 xmonad --recompile
 ```
+
+# Useful tools
+* Dmenu - programs manager
+* Flameshot - makes screenshots
+* Nitrogen - wallpapers
+* Picom - compositor for X Window System
+* Kitty - terminal emulator
+* Autokey - bind Shift-Space to Escape (for VIM purposes)

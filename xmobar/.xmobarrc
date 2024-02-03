@@ -3,8 +3,8 @@ Config { font = "Ubuntu Mono Ligaturized 13"
        , fgColor = "#a6accd"
        , position = TopH 24
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-t", "<box type=Bottom width=1 color=#e2795b><fc=#e2795b> <total>%</fc></box>"] 10
-                    , Run Memory ["-t","<box type=Bottom width=1 color=#abcf76><fc=#abcf76> <used> MB (<usedratio>%)</fc></box>"] 10
+       , commands = [ Run Cpu ["-t", "<box type=Bottom width=1 color=#e2795b> <fc=#e2795b> <total>%</fc> </box>"] 10
+                    , Run Memory ["-t","<box type=Bottom width=1 color=#abcf76> <fc=#abcf76> <used> MB (<usedratio>%)</fc> </box>"] 10
                     , Run Swap ["-t", "<fc=#464b5d>󰯍 <used> MB</fc>"] 10
     		    , Run Date "%a %b %_d, %H:%M" "date" 10
                     ]

@@ -1,15 +1,8 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
-
-import XMonad
 import Data.Monoid
 import System.Exit
+import GHC.Word (Word32)
+
+import XMonad
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
@@ -19,29 +12,36 @@ import XMonad.Layout.Spacing
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+type HEXColor = String
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "kitty"
+myTerminal :: String
+myTerminal = "kitty"
 
 -- Whether focus follows the mouse pointer.
+--
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
 -- Whether clicking on a window to focus also passes the click to the window
+--
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 0
+myBorderWidth :: Word32
+myBorderWidth = 0
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask       = mod4Mask
+myModMask :: KeyMask
+myModMask = mod4Mask
 
 -- The default number of workspaces (virtual screens) and their names.
 -- By default we use numeric strings, but any string may be used as a
@@ -52,12 +52,13 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces :: [String]
+myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#84ffff"
+myNormalBorderColor  = "#dddddd" :: HEXColor
+myFocusedBorderColor = "#84ffff" :: HEXColor
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
