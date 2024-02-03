@@ -9,6 +9,7 @@ xmonad --recompile
 
 # Useful tools
 * Dmenu - programs manager
+* Notify OSD - notifications
 * Flameshot - takes a screenshot
 * Nitrogen - wallpapers
 * Picom - compositor for X Window System
