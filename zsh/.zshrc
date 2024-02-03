@@ -11,6 +11,7 @@ export EDITOR=nvim
 export KEYTIMEOUT=1
 export NEOVIDE_MULTIGRID=true
 
+alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias pr="cd ~/projects"
 alias pl="cd ~/projects/playground"

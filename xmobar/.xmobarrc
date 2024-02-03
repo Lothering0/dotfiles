@@ -1,4 +1,7 @@
+-- https://codeberg.org/xmobar/xmobar/src/branch/master/doc/quick-start.org
+
 Config { font = "Ubuntu Mono Ligaturized 13"
+       -- , dpi = 105
        , bgColor = "#0f111a"
        , fgColor = "#a6accd"
        , position = TopH 24
