@@ -139,6 +139,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Change keyboard layout
     , ((modm              , xK_Escape), spawn "~/dotfiles/xmonad/layout_switch.sh")
+
+    -- Take a screenshot
+    , ((modm              , xK_Print), spawn "flameshot gui")
     ]
     ++
 

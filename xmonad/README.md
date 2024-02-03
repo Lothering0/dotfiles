@@ -9,7 +9,7 @@ xmonad --recompile
 
 # Useful tools
 * Dmenu - programs manager
-* Flameshot - makes screenshots
+* Flameshot - takes a screenshot
 * Nitrogen - wallpapers
 * Picom - compositor for X Window System
 * Kitty - terminal emulator
