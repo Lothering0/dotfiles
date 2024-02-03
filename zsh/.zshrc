@@ -1,7 +1,10 @@
 # In ~/.zshrc type next line:
 # source ~/dotfiles/zsh/.zshrc
 
-export PATH=$PATH:/snap/bin
+export XMONAD_CONFIG_DIR="$HOME/dotfiles/xmonad" # xmonad.hs is expected to stay here
+export XMONAD_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/xmonad"
+export XMONAD_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/xmonad"
+
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CONFIG="$HOME/dotfiles/zsh"
 export EDITOR=nvim
