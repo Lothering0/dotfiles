@@ -78,10 +78,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_c     ), kill)
 
      -- Rotate through the available layout algorithms
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    , ((modm,               xK_Escape), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. shiftMask, xK_Escape), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
     , ((modm,               xK_n     ), refresh)
@@ -138,7 +138,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
 
     -- Change keyboard layout
-    , ((modm              , xK_Escape), spawn "~/dotfiles/xmonad/layout_switch.sh")
+    , ((modm              , xK_space ), spawn "~/dotfiles/xmonad/layout_switch.sh")
 
     -- Take a screenshot
     , ((modm              , xK_Print), spawn "flameshot gui")
@@ -298,10 +298,6 @@ defaults = def {
         logHook            = myLogHook,
         startupHook        = myStartupHook
     }
-    -- `additionalKeys`
-    -- [ (( mod1Mask          , xK_Escape), spawn "~/dotfiles/xmonad/layout_switch.sh")
-    -- [ (( mod1Mask          , xK_h), spawn "~/dotfiles/xmonad/layout_switch.sh")
-    -- ]
 
 -- | Finally, a copy of the default bindings in simple textual tabular format.
 help :: String
