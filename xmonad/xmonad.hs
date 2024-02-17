@@ -3,10 +3,10 @@ import System.Exit
 import GHC.Word (Word32)
 
 import XMonad
+import XMonad.Actions.WithAll
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
-import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Layout.Spacing
 
 import qualified XMonad.StackSet as W
@@ -106,6 +106,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
+
+    -- Turns floating window to normal
+    , ((modm .|. shiftMask, xK_f     ), sinkAll           )
 
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
