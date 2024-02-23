@@ -259,10 +259,16 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+  -- Set volume to 80%
   spawnOnce "amixer set Master 80%"
-  spawnOnce "autokey-gtk &"
-  spawnOnce "nitrogen --restore &"
-  spawnOnce "picom --config ~/dotfiles/picom/picom.conf &"
+  -- Set keyboard delay to 220 ms and repeat rate to 30
+  spawnOnce "xset r rate 220 30"
+  -- Autokey
+  spawnOnce "autokey-gtk"
+  -- Nitrogen, wallpaper
+  spawnOnce "nitrogen --restore"
+  -- Picom, compositor for Xorg
+  spawnOnce "picom --config ~/dotfiles/picom/picom.conf"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
