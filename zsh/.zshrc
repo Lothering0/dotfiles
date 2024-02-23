@@ -17,6 +17,7 @@ fi
 
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias code="code --disable-features=SendMouseLeaveEvents"
+alias dt="cd ~/dotfiles"
 alias pr="cd ~/projects"
 alias pl="cd ~/projects/playground"
 # https://github.com/Lothering0/repl
