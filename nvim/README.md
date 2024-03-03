@@ -1,4 +1,4 @@
-# neovim-config
+# Neovim config
 
 ## 1. Neovim installation
 
@@ -9,8 +9,6 @@
 In ".config" directory create symlink named "nvim" to "~/dotfiles/nvim" directory
 
 ```sh
-cd ~
-git clone https://github.com/Lothering0/dotfiles.git
 ln -s ~/dotfiles/nvim ~/.config
 ```
 
