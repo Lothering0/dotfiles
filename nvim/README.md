@@ -6,7 +6,7 @@
 
 ## 2. Config installation
 
-In "~/.config" directory create symlink named "nvim" to "~/dotfiles/nvim" directory
+In "\~/.config" directory create symlink named "nvim" to "~/dotfiles/nvim" directory
 
 ```sh
 ln -s ~/dotfiles/nvim ~/.config
