@@ -1,1 +1,3 @@
 zsh/.aliases.zsh
+nvim/lua/constants.lua
+nvim/plugin/
