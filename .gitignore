@@ -1,3 +1,6 @@
 zsh/.aliases.zsh
+
+kitty/constants.conf
+
 nvim/lua/constants.lua
 nvim/plugin/

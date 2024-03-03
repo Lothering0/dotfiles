@@ -5,7 +5,7 @@ return {
   },
 
   -- Common colors
-  white =    '#EEFFFF',
+  white =    '#E3E2E9',
   gray =     '#717CB4',
   black =    '#000000',
   red =      '#FF5555',
@@ -31,7 +31,7 @@ return {
   link =   '#80CBC4',
   -- cursor = '#868BF5',
   cursor = '#65C0FC',
-  title =  '#EEFFFF',
+  title =  '#E3E2E9',
 
   none =         'NONE',
   bg =           '#15141B',
