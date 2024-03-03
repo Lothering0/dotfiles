@@ -20,8 +20,7 @@ alias code="code --disable-features=SendMouseLeaveEvents"
 alias dt="cd ~/dotfiles"
 alias pr="cd ~/projects"
 alias pl="cd ~/projects/playground"
-# https://github.com/Lothering0/repl
-alias js="node ~/projects/repl/index.js"
+alias js="node ~/projects/repl/index.js" # https://github.com/Lothering0/repl
 
 # Use powerline
 USE_POWERLINE="true"
