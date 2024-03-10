@@ -60,6 +60,9 @@ return {
   ["@type.builtin"] = '#8CD4E4',
   ["@property"] =     '#EE8FEC',
   ["@function"] = '#FACE8C',
+  ["@tag"] = '#936FDE',
+  ["@tag.attribute"] = '#EE8FEC',
+  ["@tag.delimiter"] = '#E3E2E9',
   ["@parameter"] = '#E3E2E9',
   folder = '#61FFCA',
 
