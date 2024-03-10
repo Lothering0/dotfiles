@@ -1,7 +1,7 @@
 return {
   meta = {
     name = "material",
-    style = "deep_ocean"
+    style = "ocean"
   },
 
   -- Common colors
