@@ -27,6 +27,7 @@ return require("packer").startup(function()
     run = ":TSUpdate",
     -- Version 1ae9b0e4558fe7868f8cda2db65239cfb14836d0 (Jan, 2024) and above has incorrect highlights
     commit = "10dd49958c96f86c8247c715bd20a6681afc1d8b"
+    -- To install: typescript javascript jsdoc lua luadoc haskell vue
   }                                        -- Syntax highlighting
   use { "p00f/nvim-ts-rainbow" }           -- TreeSitter brackets pair colorizer
   use { "mattn/emmet-vim" }                -- Emmet
@@ -36,8 +37,9 @@ return require("packer").startup(function()
   use {
     "neoclide/coc.nvim",
     branch = "release",
-    run = ":CocInstall coc-highlight coc-prettier coc-eslint",
+    run = ":CocInstall coc-highlight coc-prettier coc-eslint coc-sumneko-lua",
   }
+  -- use { "folke/neodev.nvim" }              -- Plugin development with full signature help, docs and completion for the nvim lua API
   use { "folke/noice.nvim" }               -- Plugin which replace native Neovim command line
   use { "MunifTanjim/nui.nvim" }           -- Required by Noice
   use { "fladson/vim-kitty" }              -- Kitty configuration syntax highlighting

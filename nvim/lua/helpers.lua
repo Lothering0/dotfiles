@@ -1,24 +1,37 @@
-local g = vim.g
-local o = vim.opt
-local c = vim.cmd
+local helpers = {
+  g = vim.g,
+  o = vim.opt,
+  c = vim.cmd,
+  augroup = vim.api.nvim_create_augroup, -- Create/get autocommand group
+  autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+}
 
-local function map(mode, key, v, noremap, expr)
-  local noremap = noremap or true
-  vim.api.nvim_set_keymap(mode, key, v, {
+---@param mode VimMode
+---@param key string
+---@param rhs string
+---@param noremap? boolean
+---@param expr? boolean
+function helpers.map(mode, key, rhs, noremap, expr)
+  noremap = noremap or true
+  vim.api.nvim_set_keymap(mode, key, rhs, {
     silent = true,
     noremap = noremap,
     expr = expr
   })
 end
 
-augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
-autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+---Highlights by group name
+---@param name HighlightGroup Group name
+---@param values HighlightOptions
+function helpers.highlight(name, values)
+  vim.api.nvim_set_hl(0, name, values)
+end
 
---[=====[
- Returns is cursor on current position surrounded by first and second
- letter in symbols params
---]=====]
-local function is_surrounded(symbols)
+---Returns is cursor on current position surrounded by first and second letter in symbols params
+---@param symbols string
+---@nodiscard
+---@return string
+function helpers.is_surrounded(symbols)
   local vim_fn = 'getline(".")[col(".")-2:col(".")-1]'
 
   return vim_fn .. '=="' .. symbols .. '"'
@@ -44,33 +57,34 @@ local function if_surrounded(table, key_to_remap)
   local expression = ""
 
   for symbols, vim_expression in pairs(table) do
-    expression = expression .. is_surrounded(symbols) .. " ? " .. vim_expression .. " : "
+    expression = expression .. helpers.is_surrounded(symbols) .. " ? " .. vim_expression .. " : "
   end
 
   expression = expression .. key_to_remap
-  return map("i", key_to_remap, expression, true)
+  return helpers.map("i", key_to_remap, expression, true)
 end
 
-local function get_config_path(folder)
+---@param folder string
+---@return fun(file: string): string
+function helpers.get_config_path(folder)
+  ---@param file string
+  ---@return string
+  ---@nodiscard
   return function(file)
     return "plugins/configs/" .. folder .. "/" .. file
   end
 end
 
-local function ternary(condition, if_true, if_false)
+---@generic if_true
+---@generic if_false
+---@param condition any
+---@param if_true if_true
+---@param if_false if_false
+---@return if_true | if_false
+---@nodiscard
+function helpers.ternary(condition, if_true, if_false)
   if condition then return if_true end
   return if_false
 end
 
-return {
-  g = g,
-  o = o,
-  c = c,
-  map = map,
-  augroup = augroup,
-  autocmd = autocmd,
-  is_surrounded = is_surrounded,
-  -- if_surrounded = if_surrounded,
-  get_config_path = get_config_path,
-  ternary = ternary
-}
+return helpers

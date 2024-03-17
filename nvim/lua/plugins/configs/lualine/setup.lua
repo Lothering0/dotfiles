@@ -1,8 +1,8 @@
 local colors = require("themes/init")
 local is_hl_set = 0
 
-function set_mode_color(color, bg_color)
-  bg = bg_color or colors.contrast
+local function set_mode_color(color, bg_color)
+  local bg = bg_color or colors.contrast
 
   -- Left separator of A section. Hack
   if is_hl_set < 2 then

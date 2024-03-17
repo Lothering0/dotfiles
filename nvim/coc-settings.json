@@ -17,6 +17,9 @@
   "eslint": {
     "autoFixOnSave": true
   },
+  "sumneko-lua": {
+    "enableNvimLuaDev": true
+  },
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de", //  sliders
     "variable": "\ue79b", //  isometric box

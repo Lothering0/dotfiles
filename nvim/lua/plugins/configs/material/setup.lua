@@ -21,8 +21,9 @@ require('material').setup({
     "telescope",
     "gitsigns",
     "indent-blankline",
-    "nvim-web-devicons"
+    "nvim-web-devicons",
   },
+  -- async_loading = false,
   custom_colors = function(clrs)
     -- if colors.meta.name == "material" then return end
 
