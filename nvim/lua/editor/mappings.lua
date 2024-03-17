@@ -1,30 +1,32 @@
+local VimMode = require("types").VimMode
 local helpers = require("helpers")
 local map = helpers.map
 local is_surrounded = helpers.is_surrounded
 
 -- Center the screen after jump on last line of file
-map("n", "G", "Gzz")
+map(VimMode.NORMAL, "G", "Gzz")
+-- map(VimMode.NORMAL, "G", "Gzz")
 
 -- Not exiting visual mode after tabulating
-map("v", ">", ">gv", false)
-map("v", "<", "<gv", false)
+map(VimMode.VISUAL, ">", ">gv", false)
+map(VimMode.VISUAL, "<", "<gv", false)
 
 -- Autoclose brackets
-map("i", '"', '""<left>')
-map("i", "'", "''<left>")
-map("i", "`", "``<left>")
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
+map(VimMode.INSERT, '"', '""<left>')
+map(VimMode.INSERT, "'", "''<left>")
+map(VimMode.INSERT, "`", "``<left>")
+map(VimMode.INSERT, "(", "()<left>")
+map(VimMode.INSERT, "[", "[]<left>")
+map(VimMode.INSERT, "{", "{}<left>")
 
 -- Comments
-map("i", "<C-_>", "<esc>maI// <esc>`a<Right><Right><Right>a", true)
-map("i", "<C-A-_>", "<esc>maI<esc>d3l`a<Left><Left><Left>a", true)
+map(VimMode.INSERT, "<C-_>", "<esc>maI// <esc>`a<Right><Right><Right>a", true)
+map(VimMode.INSERT, "<C-A-_>", "<esc>maI<esc>d3l`a<Left><Left><Left>a", true)
 
-map("n", "<C-_>", "<esc>maI// <esc>`a<Right><Right><Right>", true)
-map("n", "<C-A-_>", "<esc>maI<esc>d3l`a<Left><Left><Left>", true)
+map(VimMode.NORMAL, "<C-_>", "<esc>maI// <esc>`a<Right><Right><Right>", true)
+map(VimMode.NORMAL, "<C-A-_>", "<esc>maI<esc>d3l`a<Left><Left><Left>", true)
 
-map("v", "<C-_>", "o<esc>i/* <esc>gvO<Right><Right><Right><esc>a */<esc>gv<Right><Right><Right>", true)
+map(VimMode.VISUAL, "<C-_>", "o<esc>i/* <esc>gvO<Right><Right><Right><esc>a */<esc>gv<Right><Right><Right>", true)
 
 -- Enter
 local enter_map_condition_1 = is_surrounded("{}") .. ' ? "<cr><esc>O"'
@@ -38,7 +40,7 @@ local enter_map_conditions = table.concat({
   enter_map_condition_4
 }, " : ")
 local enter_map_expression = enter_map_conditions .. ' : "<cr>"'
-map("i", "<CR>", enter_map_expression, true, true)
+map(VimMode.INSERT, "<CR>", enter_map_expression, true, true)
 
 -- Space
 local space_map_condition_1 = is_surrounded("{}") .. ' ? "<Space><Space><Left>"'
@@ -52,7 +54,7 @@ local space_map_conditions = table.concat({
   space_map_condition_4
 }, " : ")
 local space_map_expression = space_map_conditions .. ' : "<Space>"'
-map("i", "<Space>", space_map_expression, true, true)
+map(VimMode.INSERT, "<Space>", space_map_expression, true, true)
 
 -- Backspace
 local backspace_map_condition_1 = is_surrounded("{}") .. ' ? "<Right><BS><BS>"'
@@ -66,4 +68,4 @@ local backspace_map_conditions = table.concat({
   backspace_map_condition_4
 }, " : ")
 local backspace_map_expression = backspace_map_conditions .. ' : "<BS>"'
-map("i", "<BS>", backspace_map_expression, true, true)
+map(VimMode.INSERT, "<BS>", backspace_map_expression, true, true)

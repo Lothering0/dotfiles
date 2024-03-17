@@ -1,11 +1,12 @@
+local VimMode = require("types").VimMode
 local helpers = require("helpers")
 local map = helpers.map
 
 -- Switching between buffers
-map("n", "H", ":BufferLineCyclePrev<CR>")
-map("n", "L", ":BufferLineCycleNext<CR>")
+map(VimMode.NORMAL, "H", ":BufferLineCyclePrev<CR>")
+map(VimMode.NORMAL, "L", ":BufferLineCycleNext<CR>")
 -- Close current buffer (using plugin bufdelete.nvim)
-map("n", "<A-w>", ":lua require('bufdelete').bufdelete(0, true)<CR>")
+map(VimMode.NORMAL, "<A-w>", ":lua require('bufdelete').bufdelete(0, true)<CR>")
 -- Reorder buffers
-map("n", "<C-H>", ":BufferLineMovePrev<CR>")
-map("n", "<C-L>", ":BufferLineMoveNext<CR>")
+map(VimMode.NORMAL, "<C-H>", ":BufferLineMovePrev<CR>")
+map(VimMode.NORMAL, "<C-L>", ":BufferLineMoveNext<CR>")
