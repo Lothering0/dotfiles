@@ -64,4 +64,15 @@ local CtermColor = {
 
 ---@alias HighlightOptions HighlightColorOptions | HighlightTerminalUIOptions | HighlightOtherOptions Highlight options
 
+---@class ConfigConstants
+-- TODO: make special type for theme
+---@field THEME string Current theme. Full list of available themes you can find in lua/themes
+---@field EXPLORER_WIDTH number Width of the sidebar (directiories tree)
+---@field EXPLORER_HAS_NUMBERS boolean Show line numbers in explorer
+---@field VIRT_COLUMN number Number of column where should be vertical rule
+---@field IS_CONTRAST boolean If true, editor has contrast elements (especially, sidebars)
+-- TODO: make enum 'current-line' | 'always' | 'never'
+---@field ALWAYS_SHOW_NON_TEXT boolean Determines is non-text (like whitespaces and linebreaks) should always be visible or only when selected or is current line
+---@field HAS_STRING_BACKGROUND boolean Should string literals has a background
+
 return { CtermColor = CtermColor, VimMode = VimMode }

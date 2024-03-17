@@ -1,6 +1,5 @@
 local helpers = require("helpers")
 local g = helpers.g
-local o = helpers.o
 local c = helpers.c
 
 -- Neovide
