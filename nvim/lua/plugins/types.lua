@@ -3,9 +3,9 @@
 ---@class Plugin
 ---@field highlights PluginHighlightsExport
 
----@alias PluginHighlights table<string, HighlightOptions>
+---@alias PluginHighlights table<string, HighlightOptions?>
 
----@alias PluginHighlightsGetter fun(colors: any): PluginHighlights
+---@alias PluginHighlightsGetter fun(colors: ThemeColors): PluginHighlights
 
 ---@class PluginHighlightsExport
 ---@field get_highlights PluginHighlightsGetter

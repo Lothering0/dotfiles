@@ -66,7 +66,7 @@ local CtermColor = {
 
 ---@class ConfigConstants
 -- TODO: make special type for theme
----@field THEME string Current theme. Full list of available themes you can find in lua/themes
+---@field THEME Theme Current theme. Full list of available themes you can find in lua/themes
 ---@field EXPLORER_WIDTH number Width of the sidebar (directiories tree)
 ---@field EXPLORER_HAS_NUMBERS boolean Show line numbers in explorer
 ---@field VIRT_COLUMN number Number of column where should be vertical rule

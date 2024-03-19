@@ -1,6 +1,7 @@
+---@type ThemeColors
 return {
   meta = {
-    name = "tokyo-night",
+    name = "tokyo_night",
     style = "dark",
   },
 

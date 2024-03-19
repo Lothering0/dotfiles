@@ -1,5 +1,4 @@
 local helpers = require("helpers")
-local o = helpers.o
 local g = helpers.g
 
 -- Scopes for indentations highlighter

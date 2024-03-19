@@ -1,9 +1,10 @@
+---@type ConfigConstants
 local constants = require("constants")
 local ternary = require("helpers").ternary
 local IS_CONTRAST = constants.IS_CONTRAST
 
 ---@type PluginHighlightsExport
-local highlightsGetter = {
+return {
   get_highlights = function(colors)
     ---@type PluginHighlights
     return {
@@ -24,5 +25,3 @@ local highlightsGetter = {
     }
   end
 }
-
-return highlightsGetter

@@ -1,0 +1,80 @@
+---@meta
+
+---@alias Theme
+---| AuraTheme
+---| DarkTheme
+---| HorizonTheme
+---| MaterialTheme
+---| OneDarkTheme
+---| TokyoNightTheme
+
+---@alias ThemeName
+---| AuraThemeName
+---| DarkThemeName
+---| HorizonThemeName
+---| MaterialThemeName
+---| OneDarkThemeName
+---| TokyoNightThemeName
+
+---@alias ThemeStyle
+---| AuraThemeStyle
+---| DarkThemeStyle
+---| HorizonThemeStyle
+---| MaterialThemeStyle
+---| OneDarkThemeStyle
+---| TokyoNightThemeStyle
+
+---@class ThemeMeta
+---@field name ThemeName
+---@field style ThemeStyle
+
+---@class ThemeColors
+---@field meta ThemeMeta
+-- Common colors
+---@field white Hex
+---@field gray Hex
+---@field black Hex
+---@field red Hex
+---@field green Hex
+---@field yellow Hex
+---@field blue Hex
+---@field paleblue Hex
+---@field cyan Hex
+---@field purple Hex
+---@field orange Hex
+---@field pink Hex
+-- Dark colors
+---@field darkred Hex
+---@field darkgreen Hex
+---@field darkyellow Hex
+---@field darkblue Hex
+---@field darkcyan Hex
+---@field darkpurple Hex
+---@field darkorange Hex
+-- Other
+---@field error Hex
+---@field link Hex
+---@field cursor Hex
+---@field title Hex
+---@field none 'NONE'
+---@field bg Hex
+---@field bg_alt Hex
+---@field fg Hex
+---@field text Hex
+---@field comments Hex
+---@field selection Hex
+---@field contrast Hex
+---@field active Hex
+---@field border Hex
+---@field line_numbers Hex
+---@field highlight Hex
+---@field disabled Hex
+---@field accent Hex
+---@field visual Hex
+---@field git GitColors
+---@field [string] Hex
+
+---@class GitColors
+---@field added Hex
+---@field modified Hex
+---@field removed Hex

@@ -1,3 +1,4 @@
+---@type ThemeColors
 return {
   meta = {
     name = "horizon",
@@ -33,6 +34,7 @@ return {
   title =  '#333333',
 
   none =         'NONE',
+  fg =           '#333333',
   bg =           '#F3F3F3',
   bg_alt =       '#DEDEDE',
   text =         '#333333',

@@ -1,3 +1,4 @@
+---@type ThemeColors
 return {
   meta = {
     name = "aura",

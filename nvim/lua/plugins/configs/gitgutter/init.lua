@@ -3,4 +3,8 @@ local get_path_to = helpers.get_config_path("gitgutter")
 
 require(get_path_to "options")
 
-return { highlights = require(get_path_to "highlights") }
+---@type Plugin
+return {
+  ---@module 'gitgutter.highlights'
+  highlights = require(get_path_to "highlights")
+}

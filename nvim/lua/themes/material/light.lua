@@ -1,4 +1,5 @@
 -- TODO: Improve that theme
+---@type ThemeColors
 return {
   meta = {
     name = "material",

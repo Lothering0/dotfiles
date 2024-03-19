@@ -5,4 +5,8 @@ require(get_path_to "setup")
 require(get_path_to "autocmds")
 require(get_path_to "mappings")
 
-return { highlights = require(get_path_to "highlights") }
+---@type Plugin
+return {
+  ---@module 'nvim-tree.highlights'
+  highlights = require(get_path_to "highlights")
+}

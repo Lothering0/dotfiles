@@ -1,3 +1,4 @@
+---@type ConfigConstants
 local constants = require("constants")
 local EXPLORER_WIDTH = constants.EXPLORER_WIDTH
 local EXPLORER_HAS_NUMBERS = constants.EXPLORER_HAS_NUMBERS

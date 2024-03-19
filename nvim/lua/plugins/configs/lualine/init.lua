@@ -3,4 +3,8 @@ local get_path_to = helpers.get_config_path("lualine")
 
 require(get_path_to "setup")
 
-return { highlights = require(get_path_to "highlights") }
+---@type Plugin
+return {
+  ---@module 'lualine.highlights'
+  highlights = require(get_path_to "highlights")
+}

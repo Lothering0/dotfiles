@@ -1,4 +1,6 @@
-local VIRT_COLUMN = require("constants").VIRT_COLUMN
+---@type ConfigConstants
+local constants = require("constants")
+local VIRT_COLUMN = constants.VIRT_COLUMN
 
 -- vim.opt.colorcolumn = { 81 }
 require("virt-column").setup({
