@@ -245,6 +245,10 @@ function lume.array(...)
 end
 
 
+---@generic K, V
+---@param t table<K, V>
+---@param fn fun(value: V, ...): nil
+---@return `t`
 function lume.each(t, fn, ...)
   local iter = getiter(t)
   if type(fn) == "string" then
@@ -256,6 +260,12 @@ function lume.each(t, fn, ...)
 end
 
 
+---@generic T, R
+---@param t T[]
+---@param fn fun(t: T): R
+---@return R[]
+---@overload fun(t: table): table
+---@nodiscard
 function lume.map(t, fn)
   fn = iteratee(fn)
   local iter = getiter(t)
@@ -344,7 +354,10 @@ function lume.reject(t, fn, retainkeys)
   return rtn
 end
 
-
+---@generic T: table
+---@param ... T
+---@return T
+---@nodiscard
 function lume.merge(...)
   local rtn = {}
   for i = 1, select("#", ...) do

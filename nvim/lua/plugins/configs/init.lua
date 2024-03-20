@@ -1,11 +1,14 @@
+local apply_highlights = require("plugins/configs/apply_highlights")
+
 local function get_path(plugin)
   return "plugins/configs/" .. plugin .. "/init"
 end
 
--- Material and Bufferline plugins are required in the upper module in plugins/init.lua
--- Bufferline plugin is important to be required after Material plugin
-
-return {
+---@type table<string, Plugin>
+local plugins = {
+  editor = require("editor/init"),
+  material = require(get_path "material"),
+  bufferline = require(get_path "bufferline"),
   coc = require(get_path "coc"),
   colorizer = require(get_path "colorizer"),
   emmet = require(get_path "emmet"),
@@ -20,3 +23,7 @@ return {
   ["vim-visual-multi"] = require(get_path "vim-visual-multi"),
   ["virt-column"] = require(get_path "virt-column"),
 }
+
+apply_highlights(plugins)
+
+return plugins

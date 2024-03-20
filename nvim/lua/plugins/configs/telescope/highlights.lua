@@ -8,6 +8,7 @@ return {
       TelescopeNormal = { fg = colors.fg, bg = colors.bg_alt },
       TelescopePromptNormal = { fg = colors.fg, bg = colors.contrast },
       TelescopePromptBorder = { fg = colors.contrast, bg = colors.contrast },
+      TelescopePromptCounter = { fg = colors.text },
       TelescopePreviewNormal = { bg = colors.bg },
       TelescopePreviewBorder = { fg = colors.bg, bg = colors.bg },
       TelescopeResultsNormal = { bg = colors.bg_alt },

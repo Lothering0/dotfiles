@@ -2,10 +2,6 @@ local constants = require("constants")
 local IS_CONTRAST = constants.IS_CONTRAST
 
 local colors = require("themes/init")
-local lume = require("lume")
-
-local editor = require("editor/init")
-local plugins = require("plugins/configs/init")
 
 require('material').setup({
   contrast = {
@@ -23,7 +19,7 @@ require('material').setup({
     "indent-blankline",
     "nvim-web-devicons",
   },
-  -- async_loading = false,
+  async_loading = false,
   custom_colors = function(clrs)
     -- if colors.meta.name == "material" then return end
 
@@ -44,16 +40,4 @@ require('material').setup({
       clrs.editor[key] = colors[key]
     end
   end,
-  custom_highlights = lume.merge(
-    editor.highlights.get_highlights(colors),
-    -- TODO: try to do loop over this plugins. DRY
-    require("plugins/configs/bufferline/highlights").get_highlights(colors),
-    plugins.coc.highlights.get_highlights(colors),
-    plugins.gitgutter.highlights.get_highlights(colors),
-    plugins.indent_blankline.highlights.get_highlights(colors),
-    plugins.lualine.highlights.get_highlights(colors),
-    plugins.noice.highlights.get_highlights(colors),
-    plugins["nvim-tree"].highlights.get_highlights(colors),
-    plugins.treesitter.highlights.get_highlights(colors)
-  ),
 })

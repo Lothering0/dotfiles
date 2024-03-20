@@ -21,7 +21,7 @@ return {
       lualine_b_diagnostics_hint_inactive = { link = "lualine_b_diagnostics_hint_normal" },
       lualine_b_diagnostics_hint_terminal = { link = "lualine_b_diagnostics_hint_normal" },
       -- Left separator of A section
-      lualine_transitional_lualine_a_mode_to_StatusLine = { bg = colors.bg },
+      lualine_transitional_lualine_a_mode_to_StatusLine = { fg = colors.selection, bg = colors.bg },
     }
   end
 }
