@@ -4,6 +4,7 @@ import GHC.Word (Word32)
 
 import XMonad
 import XMonad.Actions.WithAll
+import XMonad.Actions.SpawnOn
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
@@ -52,7 +53,7 @@ myModMask = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces :: [String]
+myWorkspaces :: [WorkspaceId]
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
@@ -264,7 +265,7 @@ myStartupHook = do
   -- Set keyboard delay to 220 ms and repeat rate to 30
   spawnOnce "xset r rate 220 30"
   -- Autokey
-  spawnOnce "autokey-gtk"
+  spawnOn "9" "autokey-gtk"
   -- Nitrogen, wallpaper
   spawnOnce "nitrogen --restore"
   -- Picom, compositor for Xorg
@@ -302,7 +303,7 @@ defaults = def {
 
       -- hooks, layouts
         layoutHook         = myLayout,
-        manageHook         = myManageHook,
+        manageHook         = manageSpawn <> myManageHook,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
