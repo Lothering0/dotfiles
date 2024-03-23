@@ -127,7 +127,8 @@
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=  # no surrounding whitespace
   typeset -g POWERLEVEL9K_LEFT_LEFT_WHITESPACE=' '
-  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SUBSEGMENT_SEPARATOR=' ❯ '  # separate segments with a space
+  typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=' ❯ '  # separate segments with a space
+  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=' ❮ '  # separate segments with a space
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SEGMENT_SEPARATOR=        # no end-of-line symbol
 
   # When set to true, icons appear before content on both sides of the prompt. When set
@@ -378,7 +379,7 @@
     if (( $1 )); then
       # Styling for up-to-date Git status.
       local       meta='%0F'  # default foreground
-      local      clean='%2F'  # green foreground
+      local      clean='%6F'  # green foreground
       local   modified='%3F'  # yellow foreground
       local  untracked='%4F'  # blue foreground
       local conflicted='%1F'  # red foreground
