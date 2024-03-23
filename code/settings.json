@@ -1,0 +1,288 @@
+{
+  "editor.fontFamily": "'Ubuntu Mono Ligaturized', 'CaskaydiaCove Nerd Font Mono', 'Ubuntu Mono', 'JetBrainsMonoNL Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["-"],
+      "after": ["leader", "leader", "s"]
+    }
+  ],
+  "editor.glyphMargin": false,
+  "editor.smoothScrolling": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.preferredDarkColorTheme": "Material Theme Darker High Contrast",
+  "workbench.preferredLightColorTheme": "Material Theme Lighter High Contrast",
+  "editor.lineHeight": 19,
+  "editor.renderLineHighlight": "all",
+  "workbench.list.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "editor.folding": false,
+  "workbench.colorCustomizations": {
+    /* "[Monokai]": {
+        "sideBar.background": "#000323",
+        "sideBarSectionHeader.background": "#222635",
+        "panel.background": "#222635",
+        "editor.background": "#000323",
+        "tab.activeBackground": "#222635",
+        "tab.inactiveBackground": "#2d3244",
+        "tab.inactiveForeground": "#929ac9",
+      }, */
+    // "editorBracketHighlight.foreground1": "#09929e",
+    // "editorBracketHighlight.foreground2": "#821EB8",
+    // "editorBracketHighlight.foreground3": "#c98c1a",
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#BBBBBB",
+    "editorBracketHighlight.foreground1": "#89ddff",
+    "editorBracketHighlight.foreground2": "#c792ea",
+    "editorBracketHighlight.foreground3": "#ffcb6b",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#fff",
+    "editorRuler.foreground": "#222532",
+    "[Material Theme Darker High Contrast]": {
+      "activityBarBadge.background": "#80CBC4",
+      "activityBar.activeBorder": "#80CBC4",
+      "list.activeSelectionForeground": "#80CBC4",
+      "list.inactiveSelectionForeground": "#80CBC4",
+      "list.highlightForeground": "#80CBC4",
+      "scrollbarSlider.activeBackground": "#80CBC450",
+      "editorSuggestWidget.highlightForeground": "#80CBC4",
+      "textLink.foreground": "#80CBC4",
+      "progressBar.background": "#80CBC4",
+      "pickerGroup.foreground": "#80CBC4",
+      "tab.activeBorder": "#80CBC4",
+      "notificationLink.foreground": "#80CBC4",
+      "editorWidget.resizeBorder": "#80CBC4",
+      "editorWidget.border": "#80CBC4",
+      "settings.modifiedItemIndicator": "#80CBC4",
+      "settings.headerForeground": "#80CBC4",
+      "panelTitle.activeBorder": "#80CBC4",
+      "breadcrumb.activeSelectionForeground": "#80CBC4",
+      "menu.selectionForeground": "#80CBC4",
+      "menubar.selectionForeground": "#80CBC4",
+      "editor.findMatchBorder": "#80CBC4",
+      "selection.background": "#80CBC440",
+      "statusBarItem.remoteBackground": "#80CBC4"
+    },
+    "[Material Theme Ocean High Contrast]": {},
+    "[Horizon Extended Light]": {
+      "editorLineNumber.foreground": "#BBBBBB",
+      "editorLineNumber.dimmedForeground": "#CCCCCC",
+      "terminalCursor.foreground": "#FD647C"
+    },
+    "[One Dark Darker]": {
+      "editor.lineHighlightBackground": "#14151D",
+      "editorBracketMatch.background": "#14151D",
+      "editorBracketMatch.border": "#606060",
+      "tab.activeBorderTop": "#E5C07B"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Horizon Extended], [Horizon Extended Light]": {
+      "textMateRules": [
+        {
+          "scope": "keyword.operator",
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+    "[Material Theme Darker High Contrast], [Material Theme Ocean High Contrast], [Material Theme Palenight], [Material Theme Palenight High Contrast], [Material Theme]": {
+      "textMateRules": [
+        {
+          "scope": "keyword.control",
+          "settings": {
+            "foreground": "#c792ea"
+          }
+        },
+        {
+          "scope": "support.variable.js",
+          "settings": {
+            "foreground": "#ffcb6b"
+          }
+        },
+        {
+          "scope": "support.variable",
+          "settings": {
+            "foreground": "#ffcb6b"
+          }
+        },
+        {
+          "scope": "meta.brace.round",
+          "settings": {
+            "foreground": "#89ddff"
+          }
+        },
+        {
+          "scope": "meta.brace.square",
+          "settings": {
+            "foreground": "#89ddff"
+          }
+        },
+        {
+          "scope": "variable.language.this, variable.parameter.function.language.special.self.python, variable.language.special.self.python",
+          "settings": {
+            "foreground": "#ff5370",
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": "variable.parameter, variable.parameter.ts",
+          "settings": {
+            "foreground": "#f78c6c"
+          }
+        },
+        {
+          "scope": "variable.language.super.js, meta.object-literal.key, entity.name.function, meta.definition.method entity.name.function",
+          "settings": {
+            "foreground": "#82aaff"
+          }
+        },
+        {
+          "scope": "variable.other.property, variable.object.property",
+          "settings": {
+            "foreground": "#717cb4"
+          }
+        },
+        /* {
+            "scope": "variable.other.property",
+            "settings": {
+              "foreground": "#82aaff",
+            }
+          }, */
+        {
+          "scope": "support.constant",
+          "settings": {
+            "foreground": "#f78c6c"
+          }
+        },
+        {
+          "scope": "meta.property-list.scss",
+          "settings": {
+            "foreground": "#89ddff"
+          }
+        },
+        {
+          "scope": "entity.name.tag.css",
+          "settings": {
+            "foreground": "#f07178"
+          }
+        },
+        {
+          "scope": "variable.scss",
+          "settings": {
+            "foreground": "#82aaff"
+          }
+        },
+        {
+          "scope": "keyword.other.unit, constant.language.json",
+          "settings": {
+            "foreground": "#f07178"
+          }
+        }
+      ]
+    }
+  },
+  "vetur.completion.tagCasing": "initial",
+  "emmet.includeLanguages": {
+    "vue-html": "html"
+  },
+  "emmet.excludeLanguages": ["markdown"],
+  "emmet.triggerExpansionOnTab": true,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.highlightedyank.enable": true,
+  "vim.startInInsertMode": true,
+  "editor.scrollbar.verticalScrollbarSize": 12,
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrap": "on",
+  /* "bracketPairColorizer.consecutivePairColors": [
+      ["(", ")"],
+      ["{", "}"],
+      ["[", "]"],
+      [
+        "#89ddff",
+        // Orchid #c792ea #ff5370
+        "Orchid",
+        // Gold
+        "#ffcb6b"
+      ],
+      "White"
+    ],
+    "bracketPairColorizer.showHorizontalScopeLine": false, */
+  "terminal.integrated.cursorBlinking": true,
+  "explorer.confirmDelete": false,
+  "editor.bracketPairColorization.enabled": true,
+  "vetur.ignoreProjectWarning": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "vim.easymotionKeys": "htsgcrl/mwz',.py;qjkxaoeuid-",
+  "vim.matchpairs": "(:),{:},[:],<:>",
+  "window.menuBarVisibility": "toggle",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "phase",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "open-in-browser.default": "Mozilla Firefox",
+  "editor.unicodeHighlight.allowedCharacters": {
+    "р": true
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.renderWhitespace": "all",
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": false,
+  "html.autoCreateQuotes": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "terminal.integrated.fontFamily": "'Ubuntu Mono Ligaturized', 'JetBrainsMonoNL Nerd Font', 'UbuntuMono Nerd Font Mono', 'Ubuntu Mono'",
+  "vim.surround": false,
+  "terminal.integrated.localEchoExcludePrograms": [
+    "nvim",
+    "vim",
+    "vi",
+    "nano",
+    "tmux"
+  ],
+  "workbench.startupEditor": "none",
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "editor.suggest.preview": true,
+  "editor.rulers": [120],
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "breadcrumbs.filePath": "off",
+  "prettier.singleQuote": true,
+  "prettier.vueIndentScriptAndStyle": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.cursorWidth": 2,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.empty.hint": "hidden",
+  "editor.wordWrapColumn": 120,
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.onDebugBreak": {
+    "sound": "off"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off"
+  }
+}
