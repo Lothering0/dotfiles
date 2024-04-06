@@ -4,7 +4,7 @@ Config { font = "Ubuntu Mono Ligaturized 13"
        -- , dpi = 105
        , bgColor = "#0f111a"
        , fgColor = "#a6accd"
-       , position = TopH 24
+       , position = TopHM 24 5 5 3 0
        , lowerOnStart = True
        , commands = [ Run Cpu ["-t", "<box type=Bottom width=1 color=#89ddff> <fc=#89ddff> <total>%</fc> </box>"] 10
                     , Run Memory ["-t","<box type=Bottom width=1 color=#82aaff> <fc=#82aaff> <used> MB (<usedratio>%)</fc> </box>"] 10
@@ -13,5 +13,5 @@ Config { font = "Ubuntu Mono Ligaturized 13"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <fc=#b480d6>󰲒</fc> }{ %cpu%  %memory% %swap%   %date% "
+       , template = "  <fc=#b480d6>󰲒</fc> }{ %cpu%  %memory% %swap%   %date%  "
        }
