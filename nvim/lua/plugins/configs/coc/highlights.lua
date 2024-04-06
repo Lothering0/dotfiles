@@ -15,6 +15,12 @@ return {
       CocFloatThumb = { bg = colors.fg },
       CocHighlightText = { bg = colors.selection },
       CocUnusedHighlight = ternary(colors.unused, { fg = colors.unused }, nil),
+      CocSymbolClass = { fg = colors["@constructor"] or colors.darkyellow },
+      CocSymbolFunction = { fg = colors["@function"] or colors.darkblue },
+      CocSymbolMethod = { fg = colors["@function"] or colors.darkblue },
+      CocSymbolInterface = { fg = colors.darkcyan },
+      CocSymbolKeyword = { fg = colors["@keyword"] or colors.purple },
+      CocSymbolProperty = { fg = colors["@property"] or colors.gray },
     }
   end
 }
