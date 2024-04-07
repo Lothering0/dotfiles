@@ -1,6 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require("packer").startup(function()
+local packer = require("packer")
+packer.util = require("packer.util")
+
+packer.init({
+  snapshot_path = packer.util.join_paths(vim.fn.stdpath("config"), "snapshots"),
+})
+
+return packer.startup(function()
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 

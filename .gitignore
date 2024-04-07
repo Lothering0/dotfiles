@@ -4,3 +4,4 @@ kitty/constants.conf
 
 nvim/lua/constants.lua
 nvim/plugin/
+nvim/snapshots/
