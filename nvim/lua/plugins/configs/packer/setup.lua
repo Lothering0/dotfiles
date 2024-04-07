@@ -51,3 +51,4 @@ return packer.startup(function()
   use { "MunifTanjim/nui.nvim" }           -- Required by Noice
   use { "fladson/vim-kitty" }              -- Kitty configuration syntax highlighting
 end)
+

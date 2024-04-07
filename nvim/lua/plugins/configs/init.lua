@@ -7,6 +7,7 @@ end
 ---@type table<string, Plugin>
 local plugins = {
   editor = require("editor/init"),
+  packer = require(get_path "packer"),
   material = require(get_path "material"),
   bufferline = require(get_path "bufferline"),
   coc = require(get_path "coc"),
