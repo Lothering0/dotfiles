@@ -48,7 +48,7 @@ return {
   disabled =     '#464B5D',
   accent =       '#6CDFFF',
   visual =       '#404764',
-  ["@property"] =     '#7884EE',
+  ["@variable.member"] =     '#7884EE',
   ["@operator"] =     '#BE81DA',
   ["@punctuation"] =  '#6CDFFF',
   ["@punctuation.delimiter"] =  '#6CDFFF',

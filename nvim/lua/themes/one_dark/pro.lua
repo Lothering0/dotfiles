@@ -53,7 +53,7 @@ return {
   ["@punctuation"] =  '#AAB1C0',
   ["@punctuation.delimiter"] =  '#AAB1C0',
   ["@function"] = '#61AFEF',
-  ["@property"] =     '#E06C75',
+  ["@variable.member"] =     '#E06C75',
   ["@operator"] =     '#33d8e4',
   ["@keyword.operator"] = '#C678DD',
   -- folder =       '#AAB1C0',

@@ -32,8 +32,6 @@ return packer.startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    -- Version 1ae9b0e4558fe7868f8cda2db65239cfb14836d0 (Jan, 2024) and above has incorrect highlights
-    commit = "10dd49958c96f86c8247c715bd20a6681afc1d8b"
     -- To install: typescript javascript jsdoc lua luadoc haskell vue
   }                                        -- Syntax highlighting
   use { "p00f/nvim-ts-rainbow" }           -- TreeSitter brackets pair colorizer

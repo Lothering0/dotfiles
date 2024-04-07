@@ -52,7 +52,7 @@ return {
   ["@variable"] =     '#E9C27E',
   ["@punctuation"] =  '#BB54B0',
   ["@function"] = '#24A2AF',
-  ["@property"] =     '#FE5E78',
+  ["@variable.member"] =     '#FE5E78',
   ["@operator"] =     '#BBBBBB',
   ["@keyword.operator"] = '#A96ECA',
   ["@tag.delimiter"] = '#AC455F',

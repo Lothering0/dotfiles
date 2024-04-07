@@ -23,7 +23,7 @@ return {
       ["@keyword.import"]        = { fg = colors["@keyword.import"] or colors["@keyword"] or colors.purple },
       ["@keyword.operator"]      = { fg = colors["@keyword.operator"] or colors.cyan },
       ["@exception"]             = { fg = colors["@exception"] or colors.purple },
-      ["@parameter"]             = { fg = colors["@parameter"] or colors.orange },
+      ["@variable.parameter"]    = { fg = colors["@variable.parameter"] or colors.orange },
       ["@parameter.reference"]   = { fg = colors["@parameter.reference"] or colors.orange },
       ["@repeat"]                = { fg = colors["@repeat"] or colors.purple },
       ["@string"]                = {
@@ -31,7 +31,7 @@ return {
         bg = ternary(HAS_STRING_BACKGROUND, colors.string_bg, nil)
       },
       ["@include"]               = { fg = colors["@include"] or colors.purple },
-      ["@property"]              = { fg = colors["@property"] or colors.gray },
+      ["@variable.member"]       = { fg = colors["@variable.member"] or colors.gray },
       ["@type.qualifier"]        = { fg = colors["@type.qualifier"] or colors.purple },
       ["@constructor"]           = { fg = colors["@constructor"] or nil },
       ["@operator"]              = { fg = colors["@operator"] or colors.cyan },
@@ -45,7 +45,7 @@ return {
       jsonBoolean = { link = "@boolean" },
       jsonString = { link = "@string" },
       jsonNull = { link = "@constant.builtin" },
-      jsonKeyword = { link = "@property" },
+      jsonKeyword = { link = "@variable.member" },
       jsonBraces = { link = "@punctuation" },
       Number = { link = "@number" },
       String = { link = "@string" },

@@ -20,7 +20,7 @@ return {
       CocSymbolMethod = { fg = colors["@function"] or colors.darkblue },
       CocSymbolInterface = { fg = colors.darkcyan },
       CocSymbolKeyword = { fg = colors["@keyword"] or colors.purple },
-      CocSymbolProperty = { fg = colors["@property"] or colors.gray },
+      CocSymbolProperty = { fg = colors["@variable.member"] or colors.gray },
     }
   end
 }
