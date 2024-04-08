@@ -32,6 +32,7 @@ return {
       },
       ["@include"]               = { fg = colors["@include"] or colors.purple },
       ["@variable.member"]       = { fg = colors["@variable.member"] or colors.gray },
+      ["@property"]              = { link = "@variable.member" },
       ["@type.qualifier"]        = { fg = colors["@type.qualifier"] or colors.purple },
       ["@constructor"]           = { fg = colors["@constructor"] or nil },
       ["@operator"]              = { fg = colors["@operator"] or colors.cyan },
