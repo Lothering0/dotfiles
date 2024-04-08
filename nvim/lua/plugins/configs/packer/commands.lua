@@ -6,6 +6,7 @@ vim.api.nvim_create_user_command(
   function()
     local file_name = os.date("%Y-%m-%dT%H-%M-%S")
     packer.snapshot(file_name)
+    print("Created snapshot file: ~/dotfiles/nvim/snapshots/" .. file_name)
   end,
   { nargs = 0 }
 )
