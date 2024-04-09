@@ -59,7 +59,7 @@ configuration {
 /*	display-run: ;*/
 /*	display-ssh: ;*/
   show-icons: true;
-  display-drun: "Applications: ";
+  display-drun: "";
   drun-display-format: "{icon} {name}";
   font: "Ubuntu Mono Ligaturized 14";
   modes: "drun";
@@ -176,10 +176,11 @@ configuration {
 }
 
 window {
-  /* width: 40%; */
+  width: 25%;
 }
 
 element {
+  cursor: pointer;
   padding: 5 20;
 }
 
@@ -188,10 +189,12 @@ element selected {
 }
 
 element-text {
+  cursor: inherit;
   color: inherit;
 }
 
 element-icon {
+  cursor: inherit;
   size: 25;
 }
 
@@ -207,6 +210,8 @@ prompt {
 }
 
 entry {
+  placeholder: "Find application";
+  placeholder-color: #1f2233;
   cursor: text;
   cursor-color: #ffcc00;
   cursor-width: 2;
