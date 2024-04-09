@@ -69,8 +69,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run -fn 'Ubuntu Mono Ligaturized-15' -nb '#0f111a' -nf '#a6accd' -sb '#090b10' -sf '#84ffff'")
+    -- launch rofi
+    , ((modm,               xK_p     ), spawn "rofi -show drun -config ~/dotfiles/rofi/rofi.rasi")
+    -- , ((modm,               xK_p     ), spawn "dmenu_run -fn 'Ubuntu Mono Ligaturized-15' -nb '#0f111a' -nf '#a6accd' -sb '#090b10' -sf '#84ffff'")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")

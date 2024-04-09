@@ -10,6 +10,7 @@ xmonad --recompile
 
 # Useful tools
 * **[Dmenu](https://wiki.archlinux.org/title/dmenu)** - programs manager
+* **[Rofi](https://github.com/davatorium/rofi)** - programs manager, but better
 * **[Notify OSD](https://wiki.archlinux.org/title/Desktop_notifications#Standalone)** - notifications
 * **[Flameshot](https://flameshot.org/)** - takes a screenshot
 * **[Nitrogen](https://wiki.archlinux.org/title/nitrogen)** - wallpapers
