@@ -77,8 +77,8 @@ configuration {
   kb-clear-line: "Alt+c";
   kb-accept-entry: "Control+m,Return,KP_Enter";
   kb-remove-to-eol: "Control+Shift+e";
-  kb-remove-char-back: "BackSpace,Shift+Alt+x";
   kb-remove-char-forward: "Delete,Alt+x";
+  kb-remove-char-back: "BackSpace,Alt+X";
 
 /*	display-combi: ;*/
 /*	display-keys: ;*/
@@ -222,4 +222,5 @@ listview {
   background-color: @bg;
   columns: 1;
   lines: 8;
+  padding: 5 0 7 0;
 }
