@@ -26,12 +26,10 @@ o.termguicolors = true
 o.ignorecase = true
 o.signcolumn = "yes"
 o.encoding = "utf-8"
--- Hide empty lines ~
-o.fillchars = "eob: "
+-- Hide empty lines (~) and separator line
+o.fillchars:append({ vert = " ", eob = " " })
 -- Hide current mode (-- INSERT --/-- VISUAL -- etc)
 -- o.nocompatible = true
--- Hide separator line
-o.fillchars:append({ vert = " " })
 o.updatetime = 300
 
 g.vim_json_conceal = 0
