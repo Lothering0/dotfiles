@@ -23,14 +23,14 @@
   "editor.folding": false,
   "workbench.colorCustomizations": {
     /* "[Monokai]": {
-        "sideBar.background": "#000323",
-        "sideBarSectionHeader.background": "#222635",
-        "panel.background": "#222635",
-        "editor.background": "#000323",
-        "tab.activeBackground": "#222635",
-        "tab.inactiveBackground": "#2d3244",
-        "tab.inactiveForeground": "#929ac9",
-      }, */
+          "sideBar.background": "#000323",
+          "sideBarSectionHeader.background": "#222635",
+          "panel.background": "#222635",
+          "editor.background": "#000323",
+          "tab.activeBackground": "#222635",
+          "tab.inactiveBackground": "#2d3244",
+          "tab.inactiveForeground": "#929ac9",
+        }, */
     // "editorBracketHighlight.foreground1": "#09929e",
     // "editorBracketHighlight.foreground2": "#821EB8",
     // "editorBracketHighlight.foreground3": "#c98c1a",
@@ -147,11 +147,11 @@
           }
         },
         /* {
-            "scope": "variable.other.property",
-            "settings": {
-              "foreground": "#82aaff",
-            }
-          }, */
+              "scope": "variable.other.property",
+              "settings": {
+                "foreground": "#82aaff",
+              }
+            }, */
         {
           "scope": "support.constant",
           "settings": {
@@ -183,6 +183,23 @@
           }
         }
       ]
+    },
+    "[Material Theme Ocean]": {
+      "variables": "#FF5370",
+      "textMateRules": [
+        {
+          "scope": "variable.other.property, variable.object.property",
+          "settings": {
+            "foreground": "#717cb4"
+          }
+        },
+        {
+          "scope": "variable.parameter, variable.parameter.ts",
+          "settings": {
+            "foreground": "#f78c6c"
+          }
+        }
+      ]
     }
   },
   "vetur.completion.tagCasing": "initial",
@@ -198,22 +215,21 @@
   "diffEditor.wordWrap": "on",
   "editor.wordWrap": "on",
   /* "bracketPairColorizer.consecutivePairColors": [
-      ["(", ")"],
-      ["{", "}"],
-      ["[", "]"],
-      [
-        "#89ddff",
-        // Orchid #c792ea #ff5370
-        "Orchid",
-        // Gold
-        "#ffcb6b"
+        ["(", ")"],
+        ["{", "}"],
+        ["[", "]"],
+        [
+          "#89ddff",
+          // Orchid #c792ea #ff5370
+          "Orchid",
+          // Gold
+          "#ffcb6b"
+        ],
+        "White"
       ],
-      "White"
-    ],
-    "bracketPairColorizer.showHorizontalScopeLine": false, */
+      "bracketPairColorizer.showHorizontalScopeLine": false, */
   "terminal.integrated.cursorBlinking": true,
   "explorer.confirmDelete": false,
-  "editor.bracketPairColorization.enabled": true,
   "vetur.ignoreProjectWarning": true,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "vim.easymotionKeys": "htsgcrl/mwz',.py;qjkxaoeuid-",
@@ -227,7 +243,7 @@
     "р": true
   },
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "trailing",
   "editor.guides.bracketPairs": "active",
   "editor.guides.bracketPairsHorizontal": false,
   "html.autoCreateQuotes": false,
@@ -244,11 +260,10 @@
   "workbench.startupEditor": "none",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "workbench.colorTheme": "Material Theme Ocean",
   "editor.suggest.preview": true,
   "editor.rulers": [120],
-  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "breadcrumbs.filePath": "off",
   "prettier.singleQuote": true,
@@ -284,5 +299,7 @@
   },
   "accessibility.signals.noInlayHints": {
     "sound": "off"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 16
 }
