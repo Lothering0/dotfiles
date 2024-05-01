@@ -17,3 +17,9 @@ xmonad --recompile
 * **[Picom](https://github.com/yshui/picom)** - compositor for X Window System
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - terminal emulator
 * **[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)
+
+# Cool packages
+* **Neofetch**
+
+# Optional packages
+* Aspnet-runtime, dotnet-sdk
