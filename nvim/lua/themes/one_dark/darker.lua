@@ -56,6 +56,7 @@ return {
   ["@variable.member"] =     '#EF596F',
   ["@operator"] =     '#33d8e4',
   ["@keyword.operator"] = '#D55FDE',
+  ["@keyword.coroutine"] = '#D55FDE',
   -- folder =       '#AAB1C0',
   folder =       '#DDDDDD',
 

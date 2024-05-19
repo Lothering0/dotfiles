@@ -23,6 +23,7 @@ return {
       ["@keyword.import"]        = { fg = colors["@keyword.import"] or colors["@keyword"] or colors.purple },
       ["@keyword.export"]        = { fg = colors["@keyword.export"] or colors["@keyword"] or colors.purple },
       ["@keyword.operator"]      = { fg = colors["@keyword.operator"] or colors.cyan },
+      ["@keyword.coroutine"]     = { fg = colors["@keyword.coroutine"] or colors.cyan },
       ["@exception"]             = { fg = colors["@exception"] or colors.purple },
       ["@variable.parameter"]    = { fg = colors["@variable.parameter"] or colors.orange },
       ["@parameter.reference"]   = { fg = colors["@parameter.reference"] or colors.orange },
