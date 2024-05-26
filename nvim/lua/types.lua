@@ -4,10 +4,18 @@
 
 ---@enum VimMode
 local VimMode = {
-  NORMAL = 'n',
-  INSERT = 'i',
-  VISUAL = 'v',
-  REPLACE = 'x',
+  NORMAL = "n",
+  INSERT = "i",
+  VISUAL = "v",
+  REPLACE = "x",
+}
+
+---@enum NonTextVisibility
+local NonTextVisibility = {
+  ALWAYS = "always",
+  NEVER = "never",
+  VISUAL = "visual",
+  TRAILING = "trailing",
 }
 
 ---@alias Hex string Hex value. Example: "#ffffff"
@@ -71,8 +79,7 @@ local CtermColor = {
 ---@field EXPLORER_HAS_NUMBERS boolean Show line numbers in explorer
 ---@field VIRT_COLUMN number Number of column where should be vertical rule
 ---@field IS_CONTRAST boolean If true, editor has contrast elements (especially, sidebars)
--- TODO: make enum 'current-line' | 'always' | 'never'
----@field ALWAYS_SHOW_NON_TEXT boolean Determines is non-text (like whitespaces and linebreaks) should always be visible or only when selected or is current line
+---@field SHOW_NON_TEXT NonTextVisibility Determines when non-text (like whitespaces and linebreaks) should be visible
 ---@field HAS_STRING_BACKGROUND boolean Should string literals has a background
 
-return { CtermColor = CtermColor, VimMode = VimMode }
+return { CtermColor = CtermColor, VimMode = VimMode, NonTextVisibility = NonTextVisibility }

@@ -87,4 +87,17 @@ function helpers.ternary(condition, if_true, if_false)
   return if_false
 end
 
+---@generic value
+---@param t table
+---@param value value
+---@return boolean
+---@nodiscard
+function helpers.includes(t, value)
+  for _, v in pairs(t) do
+    if value == v then return true end
+  end
+
+  return false
+end
+
 return helpers

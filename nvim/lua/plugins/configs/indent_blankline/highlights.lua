@@ -1,7 +1,9 @@
 ---@type ConfigConstants
 local constants = require("constants")
-local ternary = require("helpers").ternary
-local ALWAYS_SHOW_NON_TEXT = constants.ALWAYS_SHOW_NON_TEXT
+local helpers = require("helpers")
+local ternary, includes = helpers.ternary, helpers.includes
+local NonTextVisibility = require("types").NonTextVisibility
+local SHOW_NON_TEXT = constants.SHOW_NON_TEXT
 
 ---@type PluginHighlightsExport
 return {
@@ -10,10 +12,21 @@ return {
     return {
       IndentBlanklineChar = { fg = colors.active, nocombine = true },
       IndentBlanklineContextChar = { fg = colors.fg, nocombine = true },
-      IndentBlanklineSpaceChar = { fg = ternary(ALWAYS_SHOW_NON_TEXT, colors.active, colors.bg), nocombine = true },
+      IndentBlanklineSpaceChar = {
+        fg = ternary(
+          includes({ NonTextVisibility.ALWAYS, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
+          colors.active,
+          colors.bg
+        ),
+        nocombine = true,
+      },
       IndentBlanklineContextSpaceChar = {
-        fg = ternary(ALWAYS_SHOW_NON_TEXT, colors.active, colors.bg),
-        nocombine = true
+        fg = ternary(
+          includes({ NonTextVisibility.ALWAYS, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
+          colors.active,
+          colors.bg
+        ),
+        nocombine = true,
       },
     }
   end

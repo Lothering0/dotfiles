@@ -21,6 +21,7 @@ return {
       CocSymbolInterface = { fg = colors.darkcyan },
       CocSymbolKeyword = { fg = colors["@keyword"] or colors.purple },
       CocSymbolProperty = { fg = colors["@variable.member"] or colors.gray },
+      CocInlayHint = { fg = colors.comments, bg = colors.bg_alt },
     }
   end
 }

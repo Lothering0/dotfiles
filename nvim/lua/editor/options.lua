@@ -1,4 +1,11 @@
+---@type ConfigConstants
+local constants = require("constants")
 local helpers = require("helpers")
+local NonTextVisibility = require("types").NonTextVisibility
+
+local SHOW_NON_TEXT = constants.SHOW_NON_TEXT
+
+local ternary, includes = helpers.ternary, helpers.includes
 local g = helpers.g
 local o = helpers.o
 local c = helpers.c
@@ -20,7 +27,19 @@ c [[
 o.cursorline = true
 o.wrap = true
 o.breakindent = true
-o.listchars:append({ space = "·", eol = "↴", trail = "·" })
+o.listchars:append({
+  space = ternary(
+    not includes({ NonTextVisibility.NEVER, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
+    "·",
+    " "
+  ),
+  eol = ternary(
+    not includes({ NonTextVisibility.NEVER, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
+    "↴",
+    " "
+  ),
+  trail = ternary(SHOW_NON_TEXT ~= NonTextVisibility.NEVER, "·", " "),
+})
 o.list = true
 o.termguicolors = true
 o.ignorecase = true
