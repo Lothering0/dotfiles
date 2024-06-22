@@ -1,0 +1,57 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+  :root {
+    --background: #0f111b;
+    --background-secondary: #090b10;
+    --foreground: #a6accd;
+  }
+
+  body {
+    background-color: var(--background) !important;
+  }
+
+  .logo-and-wordmark .logo {
+    /* filter: hue-rotate(210deg); */
+    animation: firefox-logo-animation infinite 90s;
+  }
+
+  @keyframes firefox-logo-animation {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  .top-site-outer .tile,
+  .top-site-outer .top-site-icon,
+  .search-wrapper .search-handoff-button {
+    background-color: var(--background-secondary) !important;
+  }
+
+  .top-site-button .title {
+    color: var(--foreground) !important;
+  }
+
+  .top-sites-list:not(.dnd-active) .top-site-outer {
+    transition: 0.2s ease-in !important;
+  }
+
+  .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+    background-color: var(--background-secondary) !important;
+  }
+
+  .search-wrapper {
+    border-bottom: none !important;
+    background-color: color-mix(in srgb, var(--background) 75%, transparent) !important;
+    backdrop-filter: blur(5px) !important;
+  }
+
+  .search-wrapper .search-handoff-button {
+    color: var(--foreground) !important;
+  }
+
+  .search-handoff-button .fake-textbox {
+    opacity: 1 !important;
+  }
+}
