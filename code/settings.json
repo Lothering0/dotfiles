@@ -1,5 +1,6 @@
 {
   "editor.fontFamily": "'Ubuntu Mono Ligaturized', 'CaskaydiaCove Nerd Font Mono', 'Ubuntu Mono', 'JetBrainsMonoNL Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.formatOnPaste": true,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -13,7 +14,6 @@
   ],
   "editor.glyphMargin": false,
   "editor.smoothScrolling": true,
-  "workbench.editor.tabSizing": "shrink",
   "workbench.preferredDarkColorTheme": "Material Theme Darker High Contrast",
   "workbench.preferredLightColorTheme": "Material Theme Lighter High Contrast",
   "editor.lineHeight": 19,
@@ -31,14 +31,14 @@
           "tab.inactiveBackground": "#2d3244",
           "tab.inactiveForeground": "#929ac9",
         }, */
-    // "editorBracketHighlight.foreground1": "#09929e",
-    // "editorBracketHighlight.foreground2": "#821EB8",
-    // "editorBracketHighlight.foreground3": "#c98c1a",
-    // "editorBracketHighlight.unexpectedBracket.foreground": "#BBBBBB",
-    "editorBracketHighlight.foreground1": "#89ddff",
+    /* "editorBracketHighlight.foreground1": "#09929e",
+    "editorBracketHighlight.foreground2": "#821EB8",
+    "editorBracketHighlight.foreground3": "#c98c1a",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#BBBBBB", */
+    /* "editorBracketHighlight.foreground1": "#89ddff",
     "editorBracketHighlight.foreground2": "#c792ea",
     "editorBracketHighlight.foreground3": "#ffcb6b",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#fff",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#fff", */
     "editorRuler.foreground": "#222532",
     "[Material Theme Darker High Contrast]": {
       "activityBarBadge.background": "#80CBC4",
@@ -202,7 +202,6 @@
       ]
     }
   },
-  "vetur.completion.tagCasing": "initial",
   "emmet.includeLanguages": {
     "vue-html": "html"
   },
@@ -232,7 +231,7 @@
   "explorer.confirmDelete": false,
   "vetur.ignoreProjectWarning": true,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
-  "vim.easymotionKeys": "htsgcrl/mwz',.py;qjkxaoeuid-",
+  "vim.easymotionKeys": "aoeidtn',.pyfgcrlzqjkxbmuh-",
   "vim.matchpairs": "(:),{:},[:],<:>",
   "window.menuBarVisibility": "toggle",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -260,8 +259,8 @@
   "workbench.startupEditor": "none",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "workbench.iconTheme": "eq-material-theme-icons-ocean",
-  "workbench.colorTheme": "Material Theme Ocean",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.colorTheme": "Bearded Theme Arc Blueberry",
   "editor.suggest.preview": true,
   "editor.rulers": [120],
   "editor.fontLigatures": true,
@@ -301,5 +300,14 @@
     "sound": "off"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontSize": 16
+  "dotnet.codeLens.enableReferencesCodeLens": false,
+  "editor.stickyScroll.enabled": false,
+  "csharp.format.enable": false,
+  "vim.easymotionMarkerForegroundColorOneChar": "#ff007c",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#00dfff",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#2b8db3",
+  // "editor.fontWeight": "bold",
+  "terminal.integrated.enablePersistentSessions": false,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.enablePreview": false
 }
