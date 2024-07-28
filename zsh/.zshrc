@@ -17,6 +17,7 @@ if [ -f ~/dotfiles/zsh/.aliases.zsh ]; then
   source ~/dotfiles/zsh/.aliases.zsh
 fi
 
+alias reboot="systemctl reboot"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias dt="cd ~/dotfiles"

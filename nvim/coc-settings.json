@@ -4,8 +4,8 @@
   "diagnostic.infoSign": "i",
   "diagnostic.hintSign": "\udb80\udf36",
   "suggest.virtualText": true,
-  "tsserver.enable": false,
-  "volar.takeOverMode.enabled": true,
+  "tsserver.enable": true,
+  "volar.takeOverMode.enabled": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "vue",
     "javascript",

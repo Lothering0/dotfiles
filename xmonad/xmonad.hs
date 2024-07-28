@@ -71,7 +71,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch rofi
     , ((modm,               xK_p     ), spawn "rofi -show drun -config ~/dotfiles/rofi/rofi.rasi")
-    -- , ((modm,               xK_p     ), spawn "dmenu_run -fn 'Ubuntu Mono Ligaturized-15' -nb '#0f111a' -nf '#a6accd' -sb '#090b10' -sf '#84ffff'")
+    -- , ((modm,               xK_p     ), spawn "dmenu_run -fn 'Ubuntu Mono-15' -nb '#0f111a' -nf '#a6accd' -sb '#090b10' -sf '#84ffff'")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -261,6 +261,8 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+  -- Start notification-daemon
+  spawnOnce "dunst"
   -- Set volume to 80%
   spawnOnce "amixer set Master 80%"
   -- Set keyboard delay to 220 ms and repeat rate to 30
@@ -271,6 +273,8 @@ myStartupHook = do
   spawnOnce "nitrogen --restore"
   -- Picom, compositor for Xorg
   spawnOnce "picom --config ~/dotfiles/picom/picom.conf"
+  -- Start Flameshot. Flameshot will not copy images to buffer without it
+  spawnOnce "flameshot"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

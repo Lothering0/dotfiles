@@ -61,7 +61,7 @@ configuration {
   show-icons: true;
   display-drun: "";
   drun-display-format: "{icon} {name}";
-  font: "Ubuntu Mono Ligaturized 14";
+  font: "Ubuntu Mono 14";
   modes: "drun";
   icon-theme: "hicolor";
   /* kb-mode-complete: ""; */
