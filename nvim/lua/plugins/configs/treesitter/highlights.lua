@@ -50,6 +50,7 @@ return {
       jsonNull = { link = "@constant.builtin" },
       jsonKeyword = { link = "@variable.member" },
       jsonBraces = { link = "@punctuation" },
+      jsonQuote = { link = "@punctuation" },
       Number = { link = "@number" },
       String = { link = "@string" },
       Function = { link = "@function" },
