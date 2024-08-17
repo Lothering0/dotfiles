@@ -63,7 +63,7 @@ configuration {
   drun-display-format: "{icon} {name}";
   font: "Ubuntu Mono 14";
   modes: "drun";
-  icon-theme: "hicolor";
+  icon-theme: "Papirus-Dark";
   /* kb-mode-complete: ""; */
   /* Vim keybindings */
   kb-move-char-back: "Left,Alt+h";
@@ -76,10 +76,11 @@ configuration {
   kb-move-word-forward: "Alt+e,Control+Right";
   kb-clear-line: "Alt+c";
   kb-accept-entry: "Control+m,Return,KP_Enter";
-  kb-remove-to-eol: "Control+Shift+e";
   kb-remove-char-forward: "Delete,Alt+x";
   kb-remove-char-back: "BackSpace,Alt+X";
   kb-remove-to-eol: "Alt+d";
+  kb-row-first: "Home,KP_Home,Alt+g";
+  kb-row-last: "End,KP_End,Alt+G";
 
 /*	display-combi: ;*/
 /*	display-keys: ;*/
@@ -161,7 +162,7 @@ configuration {
       sorting-method:    "name";
   }
   icon {
-      theme: "hicolor";
+      theme: "Papirus-Dark";
   }
 }
 
@@ -191,11 +192,12 @@ element selected {
 element-text {
   cursor: inherit;
   color: inherit;
+  vertical-align: 0.5;
 }
 
 element-icon {
   cursor: inherit;
-  size: 25;
+  size: 30;
 }
 
 inputbar {

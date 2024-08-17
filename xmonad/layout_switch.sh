@@ -11,9 +11,11 @@ else
   case $layout in
     ru)
       setxkbmap us -v dvorak
+      notify-send -u low "Layout changed to US" -t 2000
     ;;
     *)
       setxkbmap ru
+      notify-send -u low "Layout changed to RU" -t 2000
     ;;
   esac
 fi

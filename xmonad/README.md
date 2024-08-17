@@ -30,6 +30,9 @@ xmonad --recompile
 * **Neovim** - text editor
 
 # Cool packages
+* **[Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor)** - cursor theme
+* **[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** - icon theme. Lxappearance
+* **Lxappearance** - switching icons. lxappearance-gtk3 recommended
 * **Neofetch** - system information
 * **Bat** - like cat but better
 * **Postman** - make API requests

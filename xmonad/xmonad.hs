@@ -34,7 +34,7 @@ myClickJustFocuses = False
 -- Width of the window border in pixels.
 --
 myBorderWidth :: Word32
-myBorderWidth = 0
+myBorderWidth = 2
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -58,8 +58,8 @@ myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd" :: HEXColor
-myFocusedBorderColor = "#84ffff" :: HEXColor
+myFocusedBorderColor = "#89ddff" :: HEXColor
+myNormalBorderColor  = "#cccccc" :: HEXColor
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -198,7 +198,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = spacingWithEdge 3 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = spacingWithEdge 8 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -275,6 +275,8 @@ myStartupHook = do
   spawnOnce "picom --config ~/dotfiles/picom/picom.conf"
   -- Start Flameshot. Flameshot will not copy images to buffer without it
   spawnOnce "flameshot"
+  -- Start Rog Control Center for automatically switching between dGPU and iGPU
+  spawnOnce "rog-control-center"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

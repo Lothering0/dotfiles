@@ -4,32 +4,32 @@ Config { font = "Ubuntu Mono 13"
        -- , dpi = 105
        , bgColor = "#0f111a"
        , fgColor = "#a6accd"
-       , position = TopHM 24 5 5 3 0
+       , position = TopHM 30 16 16 8 0
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-t", "<box type=Bottom width=1 color=#89ddff> <fc=#89ddff> <total>%</fc> </box>"] 10
-                    , Run Memory ["-t","<box type=Bottom width=1 color=#82aaff> <fc=#82aaff> <used> MB (<usedratio>%)</fc> </box>"] 10
+       , commands = [ Run Cpu ["-t", "<box type=Bottom width=2 color=#89ddff> <fc=#89ddff> <total>%</fc> </box>"] 10
+                    , Run Memory ["-t","<box type=Bottom width=2 color=#82aaff> <fc=#82aaff> <used> MB (<usedratio>%)</fc> </box>"] 10
                     , Run Swap ["-t", "<fc=#464b5d>󰯍 <used> MB</fc>"] 10
                     , Run BatteryP ["BAT1"]
                                    ["-t", "<acstatus>",
 
                                     "--",
                                     -- Charging
-                                    "-O", "<box type=Bottom width=1 color=#82aaff> <fc=#82aaff>󱐋 <left></fc> </box>",
+                                    "-O", "<box type=Bottom width=2 color=#82aaff> <fc=#82aaff>󱐋 <left></fc> </box>",
                                     -- Off
                                     "-o", "",
                                     -- Idle
-                                    "-i", "<box type=Bottom width=1 color=#82aaff> <fc=#82aaff>󱐋 <left></fc> </box>",
+                                    "-i", "<box type=Bottom width=2 color=#82aaff> <fc=#82aaff>󱐋 <left></fc> </box>",
 
-                                    "--lows", "<box type=Bottom width=1 color=#dc6068> <fc=#dc6068> <left></fc> </box>",
-                                    "--mediums", "<box type=Bottom width=1 color=#e6b455> <fc=#e6b455> <left></fc> </box>",
-                                    "--highs", "<box type=Bottom width=1 color=#abcf76> <fc=#abcf76> <left></fc> </box>",
+                                    "--lows", "<box type=Bottom width=2 color=#dc6068> <fc=#dc6068> <left></fc> </box>",
+                                    "--mediums", "<box type=Bottom width=2 color=#e6b455> <fc=#e6b455> <left></fc> </box>",
+                                    "--highs", "<box type=Bottom width=2 color=#abcf76> <fc=#abcf76> <left></fc> </box>",
 
                                     "-P",
                                     "-L", "20", "-H", "69",
                                     "-a", "notify-send -u critical -t 5000 'Low battery'",
                                     "-A", "15"]
                                    600
-                    , Run Date "%a %b %_d, %H:%M" "date" 10
+                    , Run Date "%a %b %_d, %_I:%M %p" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
