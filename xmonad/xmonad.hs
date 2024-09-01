@@ -31,11 +31,6 @@ myFocusFollowsMouse = True
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
--- Width of the window border in pixels.
---
-myBorderWidth :: Word32
-myBorderWidth = 2
-
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
 -- ("right alt"), which does not conflict with emacs keybindings. The
@@ -56,10 +51,15 @@ myModMask = mod4Mask
 myWorkspaces :: [WorkspaceId]
 myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
 
+-- Width of the window border in pixels.
+--
+myBorderWidth :: Word32
+myBorderWidth = 1
+
 -- Border colors for unfocused and focused windows, respectively.
 --
-myFocusedBorderColor = "#89ddff" :: HEXColor
-myNormalBorderColor  = "#cccccc" :: HEXColor
+myFocusedBorderColor = "#000000" :: HEXColor
+myNormalBorderColor  = "#000000" :: HEXColor
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.

@@ -27,6 +27,7 @@ xmonad --recompile
 * **[Picom](https://github.com/yshui/picom)** - compositor for X Window System
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - terminal emulator
 * **[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)
+* **[Zoxide](https://github.com/ajeetdsouza/zoxide)** - smarter `cd` command
 * **Neovim** - text editor
 
 # Cool packages
