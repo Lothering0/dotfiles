@@ -1,7 +1,5 @@
 {
-  "editor.fontFamily": "'Ubuntu Mono Ligaturized', 'CaskaydiaCove Nerd Font Mono', 'Ubuntu Mono', 'JetBrainsMonoNL Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-  "editor.fontSize": 16,
-  "editor.tabSize": 2,
+  "editor.fontFamily": "'Cascadia Mono', 'Ubuntu Mono', 'CaskaydiaCove Nerd Font Mono', 'Ubuntu Mono', 'JetBrainsMonoNL Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.formatOnPaste": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.snippetSuggestions": "top",
@@ -14,7 +12,7 @@
   ],
   "editor.glyphMargin": false,
   "editor.smoothScrolling": true,
-  "workbench.preferredDarkColorTheme": "Material Theme Darker High Contrast",
+  "workbench.preferredDarkColorTheme": "Material Theme Ocean",
   "workbench.preferredLightColorTheme": "Material Theme Lighter High Contrast",
   "editor.lineHeight": 19,
   "editor.renderLineHighlight": "all",
@@ -185,7 +183,7 @@
       ]
     },
     "[Material Theme Ocean]": {
-      "variables": "#FF5370",
+      // "variables": "#FF5370",
       "textMateRules": [
         {
           "scope": "variable.other.property, variable.object.property",
@@ -247,20 +245,14 @@
   "editor.guides.bracketPairsHorizontal": false,
   "html.autoCreateQuotes": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "terminal.integrated.fontFamily": "'Ubuntu Mono Ligaturized', 'JetBrainsMonoNL Nerd Font', 'UbuntuMono Nerd Font Mono', 'Ubuntu Mono'",
+  "terminal.integrated.fontFamily": "'Cascadia Mono', 'Symbols Nerd Font', 'Ubuntu Mono Ligaturized', 'JetBrainsMonoNL Nerd Font', 'UbuntuMono Nerd Font Mono', 'Ubuntu Mono'",
   "vim.surround": false,
-  "terminal.integrated.localEchoExcludePrograms": [
-    "nvim",
-    "vim",
-    "vi",
-    "nano",
-    "tmux"
-  ],
+  "terminal.integrated.localEchoExcludePrograms": ["nvim", "vim", "vi", "nano", "tmux"],
   "workbench.startupEditor": "none",
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "workbench.iconTheme": "bearded-icons",
-  "workbench.colorTheme": "Bearded Theme Arc Blueberry",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "workbench.colorTheme": "Material Theme Ocean",
   "editor.suggest.preview": true,
   "editor.rulers": [120],
   "editor.fontLigatures": true,
@@ -309,5 +301,7 @@
   // "editor.fontWeight": "bold",
   "terminal.integrated.enablePersistentSessions": false,
   "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "prettier.printWidth": 120,
+  "editor.tabSize": 2
 }
