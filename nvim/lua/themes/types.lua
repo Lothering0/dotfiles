@@ -7,6 +7,7 @@
 ---| MaterialTheme
 ---| OneDarkTheme
 ---| TokyoNightTheme
+---| MonokaiTheme
 
 ---@alias ThemeName
 ---| AuraThemeName
@@ -15,6 +16,7 @@
 ---| MaterialThemeName
 ---| OneDarkThemeName
 ---| TokyoNightThemeName
+---| MonokaiThemeName
 
 ---@alias ThemeStyle
 ---| AuraThemeStyle
@@ -23,6 +25,7 @@
 ---| MaterialThemeStyle
 ---| OneDarkThemeStyle
 ---| TokyoNightThemeStyle
+---| MonokaiThemeStyle
 
 ---@class ThemeMeta
 ---@field name ThemeName

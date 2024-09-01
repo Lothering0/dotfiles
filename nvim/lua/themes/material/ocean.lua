@@ -39,14 +39,19 @@ return {
   fg =           '#A6ACCD',
   text =         '#717CB4',
   comments =     '#464B5D',
+  -- Current line in telescope or lines in context menus
   selection =    '#1F2233',
   contrast =     '#090B10',
+  -- Inactive scope line
   active =       '#1A1C25',
   border =       '#232637',
   line_numbers = '#3B3F51',
+  -- Number of line on lualine (bottom right corner)
   highlight =    '#1F2233',
+  -- Not used variables
   disabled =     '#464B5D',
   accent =       '#84FFFF',
+  -- Selection area in visual modes
   visual =       '#2d324a',
   -- ["@punctuation"] =  '#FFD700',
   ["@punctuation"] =  '#89DDFF',
