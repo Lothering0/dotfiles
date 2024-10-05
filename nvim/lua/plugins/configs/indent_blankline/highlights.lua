@@ -10,17 +10,9 @@ return {
   get_highlights = function(colors)
     ---@type PluginHighlights
     return {
-      IndentBlanklineChar = { fg = colors.active, nocombine = true },
-      IndentBlanklineContextChar = { fg = colors.fg, nocombine = true },
-      IndentBlanklineSpaceChar = {
-        fg = ternary(
-          includes({ NonTextVisibility.ALWAYS, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
-          colors.active,
-          colors.bg
-        ),
-        nocombine = true,
-      },
-      IndentBlanklineContextSpaceChar = {
+      ['@ibl.indent.char.1'] = { fg = colors.active, nocombine = true },
+      ['@ibl.scope.char.1'] = { fg = colors.fg, nocombine = true },
+      ['@ibl.whitespace.char.1'] = {
         fg = ternary(
           includes({ NonTextVisibility.ALWAYS, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
           colors.active,

@@ -26,8 +26,7 @@ return packer.startup(function()
   use { "mg979/vim-visual-multi", branch = "master" }    -- Multi cursor
   use { "marko-cerovac/material.nvim" }                  -- FIRST Material theme
   use { "norcalli/nvim-colorizer.lua" }                  -- Color (hex/rgb) highlight
-  use { "lukas-reineke/indent-blankline.nvim", tag = "v2.20.8" }          -- Highlight indentations
-  -- use { "lukas-reineke/indent-blankline.nvim" }          -- Highlight indentations
+  use { "lukas-reineke/indent-blankline.nvim" }          -- Highlight indentations
   use { "lukas-reineke/virt-column.nvim" }               -- Set symbol on certain column
   use {
     "nvim-treesitter/nvim-treesitter",
