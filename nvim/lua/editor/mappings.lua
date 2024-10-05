@@ -69,3 +69,34 @@ local backspace_map_conditions = table.concat({
 }, " : ")
 local backspace_map_expression = backspace_map_conditions .. ' : "<BS>"'
 map(VimMode.INSERT, "<BS>", backspace_map_expression, true, true)
+
+-- Auto "console.log(...);" on Alt+L
+map(VimMode.INSERT, "<A-L>", "<esc>maIconsole.log(<esc>A);<esc>`a12<Right>a", true)
+--[[
+Explanation of command step-by-step:
+<esc>        - going to normal mode
+ma           - set mark on letter "a"
+I            - going to start of line
+console.log(
+<esc>        - going to normal mode
+A            - going to end of line
+);
+<esc>        - going to normal mode
+`a           - return to the mark
+12<Right>    - move right on length of symbols. "console.log(" is 12 symbols
+a            - returning to insert mode
+--]]
+
+map(VimMode.NORMAL, "<A-L>", "maIconsole.log(<esc>A);<esc>`a12<Right>", true)
+--[[
+Explanation of command step-by-step:
+ma           - set mark on letter "a"
+I            - going to start of line
+console.log(
+<esc>        - going to normal mode
+A            - going to end of line
+);
+<esc>        - going to normal mode
+`a           - return to the mark
+12<Right>    - move right on length of symbols. "console.log(" is 12 symbols
+--]]
