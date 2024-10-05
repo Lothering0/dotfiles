@@ -31,6 +31,7 @@ xmonad --recompile
 * **Neovim** - text editor
 
 # Cool packages
+* **[Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)** - emoji font
 * **[Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor)** - cursor theme
 * **[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** - icon theme. Lxappearance
 * **Lxappearance** - switching icons. lxappearance-gtk3 recommended
