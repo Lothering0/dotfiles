@@ -39,6 +39,7 @@ o.listchars:append({
     " "
   ),
   trail = ternary(SHOW_NON_TEXT ~= NonTextVisibility.NEVER, "·", " "),
+  tab = "▎ ",
 })
 o.list = true
 o.termguicolors = true
