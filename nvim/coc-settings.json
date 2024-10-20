@@ -6,13 +6,17 @@
   "suggest.virtualText": true,
   "tsserver.enable": true,
   "volar.takeOverMode.enabled": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "vue",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "coc": {
+    "preferences": {
+      "formatOnSaveFiletypes": [
+        "vue",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+      ]
+    }
+  },
   "prettier.printWidth": 120,
   "eslint": {
     "autoFixOnSave": true
