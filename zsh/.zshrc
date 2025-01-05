@@ -17,6 +17,11 @@ if [ -f ~/dotfiles/zsh/.aliases.zsh ]; then
   source ~/dotfiles/zsh/.aliases.zsh
 fi
 
+if [ -f ~/dotfiles/zsh/.variables.zsh ]; then
+  source ~/dotfiles/zsh/.variables.zsh
+fi
+
+alias xmonad-recompile="~/dotfiles/xmonad/xmonad_recompile.sh"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias dt="cd ~/dotfiles"
