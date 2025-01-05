@@ -13,7 +13,8 @@
         "javascript",
         "javascriptreact",
         "typescript",
-        "typescriptreact"
+        "typescriptreact",
+        "haskell"
       ]
     }
   },
@@ -57,7 +58,21 @@
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-      "filetypes": ["haskell", "lhaskell"]
+      "filetypes": ["haskell", "lhaskell"],
+      "settings": {
+        "haskell": {
+          "formattingProvider": "stylish-haskell",
+          "checkParents": "CheckOnSave",
+          "checkProject": true,
+          "maxCompletions": 40,
+          "formattingProvider": "stylish-haskell",
+          "plugin": {
+            "stan": {
+              "globalOn": true
+            }
+          }
+        }
+      }
     },
     "csharp-ls": {
       "command": "csharp-ls",
