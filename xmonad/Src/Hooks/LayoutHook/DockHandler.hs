@@ -16,8 +16,15 @@ import           Src.Common.Utils.Xmonad      (getLayoutDescription,
 
 
 -- Can be useful:
+--
+-- About @LayoutModifier@ and all its methods:
 -- https://hackage.haskell.org/package/xmonad-contrib-0.18.1/docs/src/XMonad.Layout.LayoutModifier.html
+--
+-- About @LayoutClass@:
 -- https://hackage.haskell.org/package/xmonad-0.18.0/docs/src/XMonad.Core.html#LayoutClass
+--
+-- About mutable state of layout modifier:
+-- https://wiki.haskell.org/Xmonad/Mutable_state_in_contrib_modules_or_xmonad.hs
 
 useDock :: LayoutClass l a => l a -> ModifiedLayout DockHandler l a
 useDock = ModifiedLayout . DockHandler $ initialVisibility
