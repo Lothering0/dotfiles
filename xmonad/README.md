@@ -14,7 +14,12 @@ chmod u+x layout_switch.sh
 
 After each change run following command:
 ```sh
-xmonad --recompile
+xmonad-recompile
+```
+
+To make it work run:
+```sh
+chmod u+x xmonad_recompile.sh
 ```
 
 # Useful tools
@@ -26,9 +31,10 @@ xmonad --recompile
 * **[Nitrogen](https://wiki.archlinux.org/title/nitrogen)** - wallpapers
 * **[Picom](https://github.com/yshui/picom)** - compositor for X Window System
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - terminal emulator
-* **[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)
+* ~~**[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)~~
 * **[Zoxide](https://github.com/ajeetdsouza/zoxide)** - smarter `cd` command
 * **Neovim** - text editor
+* **Cairo Dock** - dock
 
 # Cool packages
 * **[Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)** - emoji font
