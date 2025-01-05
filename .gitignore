@@ -1,4 +1,8 @@
 zsh/.aliases.zsh
+zsh/.variables.zsh
+
+xmonad/lib/
+xmonad/log.txt
 
 kitty/constants.conf
 
