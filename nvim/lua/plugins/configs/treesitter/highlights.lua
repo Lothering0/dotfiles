@@ -54,6 +54,8 @@ return {
       jsonKeyword = { link = "@variable.member" },
       jsonBraces = { link = "@punctuation" },
       jsonQuote = { link = "@punctuation" },
+      yamlBool = { link = "@boolean" },
+      yamlMappingKey = { link = "@variable.member" },
       Number = { link = "@number" },
       String = { link = "@string" },
       Function = { link = "@function" },
