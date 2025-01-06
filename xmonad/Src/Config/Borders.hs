@@ -9,7 +9,9 @@ myBorderWidth :: Word32
 myBorderWidth = 1
 
 -- | Border color for focused windows
-myFocusedBorderColor = "#000000" :: HexColor
+myFocusedBorderColor :: HexColor
+myFocusedBorderColor = "#000000"
 
 -- | Border color for unfocused windows
-myNormalBorderColor  = "#000000" :: HexColor
+myNormalBorderColor  :: HexColor
+myNormalBorderColor  = "#000000"

@@ -15,7 +15,7 @@ defaults, as xmonad preserves your old layout settings by default.
 The available layouts.  Note that each layout is separated by |||,
 which denotes layout choice. -}
 -- myLayoutHook = testFunc $ spacingWithEdge 8 $ avoidStruts layouts
-myLayoutHook = spacingWithEdge 8 $ useDock $ avoidStruts layouts
+myLayoutHook = spacingWithEdge 8 . useDock . avoidStruts $ layouts
   where
     layouts = Full ||| tiled ||| Mirror tiled
 

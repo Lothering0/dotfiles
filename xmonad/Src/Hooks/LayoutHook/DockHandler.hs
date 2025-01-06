@@ -52,11 +52,10 @@ instance LayoutModifier DockHandler a where
 
     -- Called /after/ layout is changed
     redoLayout
-        :: DockHandler a      -- ^ the layout modifier
+        :: DockHandler a     -- ^ the layout modifier
         -> Rectangle         -- ^ screen rectangle
         -> Maybe (Stack a)   -- ^ current window stack
-        -> [(a, Rectangle)]  -- ^ (window,rectangle) pairs returned
-                             -- by the underlying layout
+        -> [(a, Rectangle)]  -- ^ (window,rectangle) pairs returned by the underlying layout
         -> X ([(a, Rectangle)], Maybe (DockHandler a))
     redoLayout m r ms wrs = do
         hook m
@@ -94,16 +93,22 @@ handleLayout = handleDock
 handleDock :: X ()
 handleDock = do
     visibility <- getDockVisibility
-    spawn $ dockVisibility (appKill CairoDock) (appRestart CairoDock) visibility
+    spawn $ dockVisibility whenHidden whenActive visibility
+  where
+    whenHidden :: String
+    whenHidden = appKill CairoDock
+
+    whenActive :: String
+    whenActive = appRestart CairoDock
 
 getDockVisibility :: X DockVisibility
 getDockVisibility = do
     layoutDescription <- getLayoutDescription
-    defineDockVisibility layoutDescription <$> getLayoutWindows
+    determineDockVisibility layoutDescription <$> getLayoutWindows
 
--- | Determines should dock be visibile
-defineDockVisibility :: String -> [Window] -> DockVisibility
-defineDockVisibility layoutDescription layoutWindows
+-- | Determines should dock be visibile or hidden
+determineDockVisibility :: String -> [Window] -> DockVisibility
+determineDockVisibility layoutDescription layoutWindows
     | windowsCount == 0 = DockActive
     | isLayoutFull      = DockHidden
     | windowsCount > 1  = DockActive
