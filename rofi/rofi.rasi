@@ -1,3 +1,5 @@
+// https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown
+
 configuration {
 /*	modes: "window,drun,run,ssh";*/
 /*	font: "mono 12";*/
@@ -217,6 +219,7 @@ entry {
   cursor: text;
   cursor-color: #ffcc00;
   cursor-width: 2;
+  blink: false;
   background-color: inherit;
 }
 
