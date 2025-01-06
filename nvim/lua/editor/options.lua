@@ -53,3 +53,10 @@ o.fillchars:append({ vert = " ", eob = " " })
 o.updatetime = 300
 
 g.vim_json_conceal = 0
+
+vim.filetype.add({
+  pattern = {
+    ['.*/.xmobarrc'] = 'haskell',
+    ['.*/*.rasi']    = 'scss',
+  },
+})
