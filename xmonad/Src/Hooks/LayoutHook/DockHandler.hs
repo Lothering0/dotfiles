@@ -1,18 +1,20 @@
-{-# LANGUAGE LambdaCase #-}
-
 module Src.Hooks.LayoutHook.DockHandler where
 
-import           Control.Monad                (when)
-import           Data.List                    (isInfixOf)
+import           Control.Monad                   (when)
+import           Data.List                       (isInfixOf)
 
 import           XMonad
 import           XMonad.Layout.LayoutModifier
 import           XMonad.StackSet
 
-import           Src.Common.Apps.CairoDock    (CairoDock (..))
-import           Src.Common.Utils.App         (App (..))
-import           Src.Common.Utils.Xmonad      (getLayoutDescription,
-                                               getLayoutWindows)
+import           Src.Common.Apps.CairoDock       (CairoDock (..),
+                                                  CairoDockApp (..))
+import           Src.Common.Utils.App            (App (..))
+import           Src.Common.Utils.Commands       (runCommands)
+import           Src.Common.Utils.DockVisibility (DockVisibility (..),
+                                                  dockVisibility)
+import           Src.Common.Utils.Xmonad         (getLayoutDescription,
+                                                  getLayoutWindows)
 
 
 -- Can be useful:
@@ -32,16 +34,7 @@ useDock = ModifiedLayout . DockHandler $ initialVisibility
     initialVisibility :: DockVisibility
     initialVisibility = DockHidden
 
-data DockVisibility = DockHidden | DockActive  deriving (Show, Read, Eq)
-
-dockVisibility :: a -> a -> DockVisibility -> a
-dockVisibility whenHidden whenActive = \case
-    DockHidden -> whenHidden
-    DockActive -> whenActive
-
 newtype DockHandler a = DockHandler DockVisibility deriving (Show, Read)
-
-instance Message DockVisibility
 
 instance LayoutModifier DockHandler a where
     -- Called when workspace is changed
@@ -96,10 +89,10 @@ handleDock = do
     spawn $ dockVisibility whenHidden whenActive visibility
   where
     whenHidden :: String
-    whenHidden = appKill CairoDock
+    whenHidden = runCommands [hideDock CairoDock, appRestart CairoDock]
 
     whenActive :: String
-    whenActive = appRestart CairoDock
+    whenActive = runCommands [activateDock CairoDock, appRestart CairoDock]
 
 getDockVisibility :: X DockVisibility
 getDockVisibility = do

@@ -2,8 +2,8 @@ module Src.Common.Apps.Xmonad (Xmonad (..), XmonadApp (..)) where
 
 import           Control.Arrow
 
-import           Src.Common.Utils.App         (App (..))
-import           Src.Common.Utils.Intercalate (intercalateTuple2)
+import           Src.Common.Utils.App      (App (..))
+import           Src.Common.Utils.Commands (runCommands)
 
 
 class App a => XmonadApp a where
@@ -12,7 +12,7 @@ class App a => XmonadApp a where
     recompile           :: a -> String
 
     recompileAndRestart :: a -> String
-    recompileAndRestart = recompile &&& restart >>> intercalateTuple2 "; "
+    recompileAndRestart app = runCommands [recompile app, restart app]
 
     -- | Run xmessage with a summary of the default keybindings (useful for beginners)
     echoHelp :: a -> String
