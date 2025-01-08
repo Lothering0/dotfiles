@@ -1,8 +1,8 @@
 module Src.Common.Apps.CairoDock (CairoDock (..), CairoDockApp (..)) where
 
-import           Src.Common.Utils.App            (App (..))
-import           Src.Common.Utils.DockVisibility (DockVisibility (..),
-                                                  dockVisibility)
+import           Src.Common.Utils.App         (App (..))
+import           Src.Common.Utils.DockHandler (DockVisibility (..),
+                                               dockVisibility)
 
 
 class App a => CairoDockApp a where

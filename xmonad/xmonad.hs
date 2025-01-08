@@ -1,25 +1,25 @@
 import           XMonad
-import           XMonad.Actions.SpawnOn    (manageSpawn)
+import           XMonad.Actions.SpawnOn   (manageSpawn)
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Util.Run
 
-import           Src.Common.Apps.Xmobar    (Xmobar (..))
-import           Src.Common.Utils.App      (App (..))
+import           Src.Common.Apps.Xmobar   (Xmobar (..))
+import           Src.Common.Utils.App     (App (..))
 
-import           Src.Config.Borders        (myBorderWidth, myFocusedBorderColor,
-                                            myNormalBorderColor)
-import           Src.Config.Focus          (myClickJustFocuses,
-                                            myFocusFollowsMouse)
-import           Src.Config.KeyBindings    (myKeys, myModMask)
-import           Src.Config.MouseBindings  (myMouseBindings)
-import           Src.Config.Terminal       (myTerminal)
-import           Src.Config.Workspaces     (myWorkspaces)
+import           Src.Config.Borders       (myBorderWidth, myFocusedBorderColor,
+                                           myNormalBorderColor)
+import           Src.Config.Focus         (myClickJustFocuses,
+                                           myFocusFollowsMouse)
+import           Src.Config.KeyBindings   (myKeys, myModMask)
+import           Src.Config.MouseBindings (myMouseBindings)
+import           Src.Config.Terminal      (myTerminal)
+import           Src.Config.Workspaces    (myWorkspaces)
 
-import           Src.Hooks.EventHook       (myEventHook)
-import           Src.Hooks.LayoutHook.Main (myLayoutHook)
-import           Src.Hooks.LogHook         (myLogHook)
-import           Src.Hooks.ManageHook      (myManageHook)
-import           Src.Hooks.StartupHook     (myStartupHook)
+import           Src.Hooks.EventHook      (myEventHook)
+import           Src.Hooks.LayoutHook     (myLayoutHook)
+import           Src.Hooks.LogHook        (myLogHook)
+import           Src.Hooks.ManageHook     (myManageHook)
+import           Src.Hooks.StartupHook    (myStartupHook)
 
 
 -- | Run xmonad with the settings you specify. No need to modify this.
