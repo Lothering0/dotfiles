@@ -9,8 +9,7 @@ import           Src.Common.Apps.CairoDock    (CairoDock (..),
                                                CairoDockApp (..))
 import           Src.Common.Utils.App         (App (..))
 import           Src.Common.Utils.Commands    (runCommands)
-import           Src.Common.Utils.DockHandler (DockHandler, OnDockActive (..),
-                                               OnDockHide (..), useDock)
+import           Src.Common.Utils.DockHandler (Dock, DockHandlers (..), useDock)
 
 
 {-| You can specify and transform your layouts by modifying these values.
@@ -36,11 +35,11 @@ myLayoutHook = spacingWithEdge 8 . myDock . avoidStruts $ layouts
     -- | Percent of screen to increment by when resizing panes
     delta   = 3/100
 
-myDock :: LayoutClass l a => l a -> ModifiedLayout DockHandler l a
-myDock = useDock (OnDockHide onHide) (OnDockActive onActive)
+myDock :: LayoutClass l a => l a -> ModifiedLayout Dock l a
+myDock = useDock handlers
   where
-    onHide :: X ()
-    onHide = spawn . runCommands $ [hideDock CairoDock, appRestart CairoDock]
-
-    onActive :: X ()
-    onActive = spawn . runCommands $ [activateDock CairoDock, appRestart CairoDock]
+    handlers :: DockHandlers
+    handlers = DockHandlers
+        { onHide   = spawn . runCommands $ [hideDock CairoDock, appRestart CairoDock]
+        , onActive = spawn . runCommands $ [activateDock CairoDock, appRestart CairoDock]
+        }
