@@ -103,6 +103,7 @@ require('lualine').setup {
           if lang == "javascript" then return "JavaScript" end
           if lang == "typescript" then return "TypeScript" end
           if lang == "json" then return "JSON" end
+          if lang == "jsonc" then return "JSON with comments" end
           if lang == "vue" then return "Vue" end
           if lang == "javascriptreact" then return "JS React" end
           if lang == "typescriptreact" then return "TS React" end
