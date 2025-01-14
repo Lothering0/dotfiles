@@ -1,6 +1,3 @@
-# In ~/.zshrc type next line:
-# source ~/dotfiles/zsh/.zshrc
-
 export PATH=$PATH:~/.dotnet/tools
 
 export XMONAD_CONFIG_DIR="$HOME/dotfiles/xmonad" # xmonad.hs is expected to stay here
