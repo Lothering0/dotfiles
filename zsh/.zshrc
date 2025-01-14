@@ -13,6 +13,8 @@ export EDITOR=nvim
 export KEYTIMEOUT=1
 export NEOVIDE_MULTIGRID=true
 
+source ~/dotfiles/zsh/.colors.zsh
+
 if [ -f ~/dotfiles/zsh/.aliases.zsh ]; then
   source ~/dotfiles/zsh/.aliases.zsh
 fi
@@ -23,6 +25,7 @@ fi
 
 alias xmonad-recompile="~/dotfiles/xmonad/xmonad_recompile.sh"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
+alias fastfetch="fastfetch -c ~/dotfiles/fastfetch/config.jsonc"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias dt="cd ~/dotfiles"
 alias pr="cd ~/projects"

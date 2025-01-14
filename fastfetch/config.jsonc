@@ -1,0 +1,117 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+    "color": {
+      "1": "blue",
+      "2": "cyan"
+    },
+    "padding": {
+      /*
+       * totalHeight:          15
+       * logoHeight:           7
+       * titleWithBreakHeight: 2
+       *
+       * diff:                   totalHeight - logoHeight = 8
+       * center:                 diff / 2 = 4
+       * centerConsideringTitle: diff + titleWithBreakHeight = 6
+       * top:                    centerConsideringTitle - 1 = 5  one line higher 'cause it's too low
+       */
+      "top": 5,
+      "left": 3
+    }
+  },
+  "display": {
+    "separator": " • ",
+    "color": {
+      "separator": "light_black"
+    },
+    "key": {
+      "paddingLeft": 5
+    }
+  },
+  "modules": [
+    "title",
+    "break",
+
+    {
+      "key": " OS",
+      "keyColor": "blue",
+      "type": "os"
+    },
+    {
+      "key": " ├ ",
+      "keyColor": "blue",
+      "separator": {
+        "outputColor": "red"
+      },
+      "type": "kernel"
+    },
+    {
+      "key": " ├ ",
+      "keyColor": "blue",
+      "type": "packages"
+    },
+    {
+      "key": " └ ",
+      "keyColor": "blue",
+      "type": "shell"
+    },
+    "break",
+
+    {
+      "key": " WM",
+      "keyColor": "cyan",
+      "type": "command",
+      // FIXME: hardcode
+      "text": "echo xmonad"
+    },
+    {
+      "key": " └ ",
+      "keyColor": "cyan",
+      "type": "terminal"
+    },
+    "break",
+
+    {
+      "key": " PC",
+      "keyColor": "magenta",
+      "type": "host"
+    },
+    {
+      "key": " ├ ",
+      "keyColor": "magenta",
+      "type": "cpu"
+    },
+    {
+      "key": " ├󰍹 ",
+      "keyColor": "magenta",
+      "type": "gpu"
+    },
+    {
+      "key": " ├ ",
+      "keyColor": "magenta",
+      "type": "memory"
+    },
+    {
+      "key": " ├ ",
+      "keyColor": "magenta",
+      "type": "uptime"
+    },
+    {
+      "key": " └ ",
+      "keyColor": "magenta",
+      "type": "display"
+    },
+    "break",
+
+    {
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "outputColor": "default",
+      // NOTICE: for list of colors see ~/dotfiles/zsh/.colors.zsh
+      "text": "echo \"${Yellow}󰮯  ${Red}󰊠  ${Green}󰊠  ${Blue}󰊠  ${Magenta}󰊠  ${Cyan}󰊠  ${White}󰊠  ${IBlack}󰊠 ${Color_Off}\""
+    }
+  ]
+}
