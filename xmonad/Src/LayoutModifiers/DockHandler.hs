@@ -64,7 +64,7 @@ instance LayoutModifier Dock a where
     -- Called when workspace is changed
     unhook :: Dock a -> X ()
     unhook m = do
-        whenDockVisibilityChanged m handleLayout
+        whenDockVisibilityChanged handleLayout m
         pure ()
 
     -- Called /after/ layout is changed
@@ -80,7 +80,7 @@ instance LayoutModifier Dock a where
         pure $ pureModifier modifiedM r ms wrs
       where
         unpureModifier :: Dock a -> X (Dock a)
-        unpureModifier m = whenDockVisibilityChanged m onVisibilityChanged
+        unpureModifier = whenDockVisibilityChanged onVisibilityChanged
 
         onVisibilityChanged :: Dock a -> X ()
         onVisibilityChanged dockHandler@(Dock _ newVisibility) = do
@@ -96,10 +96,10 @@ instance LayoutModifier Dock a where
 
 -- | Do something iff state is changed
 whenDockVisibilityChanged
-    :: Dock a
-    -> (Dock a -> X ())
+    :: (Dock a -> X ())
+    -> Dock a
     -> X (Dock a)
-whenDockVisibilityChanged (Dock handlers visibility) f = do
+whenDockVisibilityChanged f (Dock handlers visibility) = do
       newVisibility <- getDockVisibility
       when (newVisibility /= visibility) (f . Dock handlers $ newVisibility)
       pure . Dock handlers $ newVisibility
