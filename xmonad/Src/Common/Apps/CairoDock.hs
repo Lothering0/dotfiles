@@ -1,8 +1,8 @@
 module Src.Common.Apps.CairoDock (CairoDock (..), CairoDockApp (..)) where
 
-import           Src.Common.Utils.App         (App (..))
-import           Src.Common.Utils.DockHandler (DockVisibility (..),
-                                               dockVisibility)
+import           Data.Array           (inRange)
+
+import           Src.Common.Utils.App (App (..))
 
 
 class App a => CairoDockApp a where
@@ -17,27 +17,44 @@ pathToDir = "~/dotfiles/cairo-dock"
 pathToConfig :: String
 pathToConfig = pathToDir ++ "/current_theme/cairo-dock.conf"
 
-writeVisibilityToConfig :: Int -> String
-writeVisibilityToConfig x =
+writeVisibilityToConfig :: CairoDockVisibilityLevel -> String
+writeVisibilityToConfig (CairoDockVisibilityLevel level) =
        "sed -i -- 's/visibility=[0-9]/visibility="
-    ++ level
+    ++ levelString
     ++ "/g' "
     ++ pathToConfig
   where
-    level :: String
-    level = show x
+    levelString :: String
+    levelString = show level
 
-getLevelByVisibility :: DockVisibility -> Int
-getLevelByVisibility = dockVisibility levelWhenHidden levelWhenActive
+newtype CairoDockVisibilityLevel = CairoDockVisibilityLevel Int
+
+mkCairoDockVisibilityLevel :: Int -> CairoDockVisibilityLevel
+mkCairoDockVisibilityLevel x
+    | inRange range x = CairoDockVisibilityLevel x
+    | otherwise       = error errorMessage
   where
-    levelWhenHidden :: Int
-    levelWhenHidden = 5
+    minLevel :: Int
+    minLevel = 0
 
-    levelWhenActive :: Int
-    levelWhenActive = 1
+    maxLevel :: Int
+    maxLevel = 10
 
-setVisibility :: DockVisibility -> String
-setVisibility = writeVisibilityToConfig . getLevelByVisibility
+    range :: (Int, Int)
+    range = (minLevel, maxLevel)
+
+    errorMessage :: String
+    errorMessage =
+           "Invalid Cairo-Dock visibility level. Must be "
+        ++ show minLevel
+        ++ "-"
+        ++ show maxLevel
+
+levelWhenHidden ::  CairoDockVisibilityLevel
+levelWhenHidden = mkCairoDockVisibilityLevel 5
+
+levelWhenActive ::  CairoDockVisibilityLevel
+levelWhenActive = mkCairoDockVisibilityLevel 1
 
 data CairoDock = CairoDock
 
@@ -48,6 +65,6 @@ instance App CairoDock where
     appRun app = appCommand app ++ " -o -d " ++ pathToDir
 
 instance CairoDockApp CairoDock where
-    hideDock     = const . setVisibility $ DockHidden
+    hideDock     _ = writeVisibilityToConfig levelWhenHidden
 
-    activateDock = const . setVisibility $ DockActive
+    activateDock _ = writeVisibilityToConfig levelWhenActive

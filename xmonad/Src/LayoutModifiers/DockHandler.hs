@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module Src.Common.Utils.DockHandler where
+module Src.LayoutModifiers.DockHandler where
 
 import           Control.Monad                (when)
 import           Data.List                    (isInfixOf)

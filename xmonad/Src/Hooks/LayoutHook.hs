@@ -2,14 +2,16 @@ module Src.Hooks.LayoutHook where
 
 import           XMonad
 import           XMonad.Hooks.ManageDocks
-import           XMonad.Layout.LayoutModifier (ModifiedLayout)
+import           XMonad.Layout.LayoutModifier    (ModifiedLayout)
 import           XMonad.Layout.Spacing
 
-import           Src.Common.Apps.CairoDock    (CairoDock (..),
-                                               CairoDockApp (..))
-import           Src.Common.Utils.App         (App (..))
-import           Src.Common.Utils.Commands    (runCommands)
-import           Src.Common.Utils.DockHandler (Dock, DockHandlers (..), useDock)
+import           Src.Common.Apps.CairoDock       (CairoDock (..),
+                                                  CairoDockApp (..))
+import           Src.Common.Utils.App            (App (..))
+import           Src.Common.Utils.Commands       (runCommands)
+
+import           Src.LayoutModifiers.DockHandler (Dock, DockHandlers (..),
+                                                  useDock)
 
 
 {-| You can specify and transform your layouts by modifying these values.
