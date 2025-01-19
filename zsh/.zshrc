@@ -24,10 +24,12 @@ alias xmonad-recompile="~/dotfiles/xmonad/xmonad_recompile.sh"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias fastfetch="fastfetch -c ~/dotfiles/fastfetch/config.jsonc"
 alias code="code --disable-features=SendMouseLeaveEvents"
+alias ghci="ghci -ghci-script ~/dotfiles/ghc/ghci.conf"
+alias js="node ~/projects/repl/index.js" # https://github.com/Lothering0/repl
+
 alias dt="cd ~/dotfiles"
 alias pr="cd ~/projects"
 alias pl="cd ~/projects/playground"
-alias js="node ~/projects/repl/index.js" # https://github.com/Lothering0/repl
 
 # Use powerline
 USE_POWERLINE="true"
