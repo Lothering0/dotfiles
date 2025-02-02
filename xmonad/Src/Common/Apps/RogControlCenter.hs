@@ -7,4 +7,4 @@ data RogControlCenter = RogControlCenter
 
 instance App RogControlCenter where
     -- Start Rog Control Center for automatically switching between dGPU and iGPU
-    appCommand = const "rog-control-center"
+    appCommand _ = "rog-control-center"

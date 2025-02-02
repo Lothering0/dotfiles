@@ -13,14 +13,14 @@ Container=_MainDock_
 sep_display=
 
 #s[Default] Launcher's name:
-Name=Telegram
+Name=
 
 #S+[Default] Image's name or path:
-Icon=/usr/share/icons/Papirus-Dark/64x64/apps/telegram.svg
+Icon=
 
 #s[Default] Command to launch on click:
 #{Example: nautilus --no-desktop, gedit, etc. You can even enter a shortkey, e.g. <Alt>F1, <Ctrl>c,  <Ctrl>v, etc}
-Exec=telegram-desktop
+Exec=
 
 
 #X[Extra parameters]
@@ -42,8 +42,8 @@ Terminal=false
 ShowOnViewport=0
 
 #f[0;100] Order you want for this launcher among the others:
-Order=9
+Order=9.25
 
 Icon Type=0
 Type=Application
-Origin=
+Origin=/usr/share/applications/org.telegram.desktop.desktop

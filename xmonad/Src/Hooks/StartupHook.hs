@@ -4,6 +4,7 @@ import           XMonad
 import           XMonad.Util.SpawnOnce
 
 import           Src.Common.Apps.Amixer           (Amixer (..))
+import           Src.Common.Apps.CairoDock        (CairoDock (..))
 import           Src.Common.Apps.Dunst            (Dunst (..))
 import           Src.Common.Apps.Flameshot        (Flameshot (..))
 import           Src.Common.Apps.Nitrogen         (Nitrogen (..))
@@ -31,4 +32,5 @@ initCommands =
   , appInit Picom
   , appInit Flameshot
   , appInit RogControlCenter
+  , appInit CairoDock
   ]

@@ -32,6 +32,7 @@ chmod u+x xmonad_recompile.sh
 * **[Picom](https://github.com/yshui/picom)** - compositor for X Window System
 * **[Kitty](https://sw.kovidgoyal.net/kitty/)** - terminal emulator
 * ~~**[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)~~
+* **[Kanata](https://github.com/jtroo/kanata)** - Keybindings
 * **[Zoxide](https://github.com/ajeetdsouza/zoxide)** - smarter `cd` command
 * **Neovim** - text editor
 * **Cairo Dock** - dock
@@ -41,11 +42,12 @@ chmod u+x xmonad_recompile.sh
 * **[Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor)** - cursor theme
 * **[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** - icon theme. Lxappearance
 * **Lxappearance** - switching icons. lxappearance-gtk3 recommended
-* **Neofetch** - system information
+* ~~**Neofetch** - system information~~
+* **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - system information
 * **Bat** - like cat but better
 * **Postman** - make API requests
 * **Dbeaver** - database manager
 * **Obsidian** - notes
 
 # Optional packages
-* Aspnet-runtime, dotnet-sdk
+* **Aspnet-runtime**, **dotnet-sdk** - to work with C#

@@ -59,10 +59,12 @@ levelWhenActive = mkCairoDockVisibilityLevel 1
 data CairoDock = CairoDock
 
 instance App CairoDock where
-    appCommand = const "cairo-dock"
+    appClassName _ = pure "Cairo-dock"
+
+    appCommand   _ = "cairo-dock"
 
     -- | Launch dock
-    appRun app = appCommand app ++ " -o -d " ++ pathToDir
+    appRun app     = appCommand app ++ " -o -d " ++ pathToDir
 
 instance CairoDockApp CairoDock where
     hideDock     _ = writeVisibilityToConfig levelWhenHidden

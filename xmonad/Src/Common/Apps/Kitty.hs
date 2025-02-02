@@ -6,4 +6,4 @@ import           Src.Common.Utils.App (App (..))
 data Kitty = Kitty
 
 instance App Kitty where
-    appCommand = const "kitty"
+    appCommand _ = "kitty"

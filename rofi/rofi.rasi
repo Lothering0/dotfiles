@@ -63,7 +63,7 @@ configuration {
   show-icons: true;
   display-drun: "";
   drun-display-format: "{icon} {name}";
-  font: "Ubuntu Mono 14";
+  font: "Cascadia Mono 12";
   modes: "drun";
   icon-theme: "Papirus-Dark";
   /* kb-mode-complete: ""; */

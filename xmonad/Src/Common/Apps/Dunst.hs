@@ -7,4 +7,4 @@ data Dunst = Dunst
 
 instance App Dunst where
     -- | Start notification-daemon
-    appCommand = const "dunst"
+    appCommand _ = "dunst"

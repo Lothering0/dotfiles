@@ -7,6 +7,6 @@ import           Src.Common.Utils.App (App (..))
 data Nitrogen = Nitrogen
 
 instance App Nitrogen where
-    appCommand  = const "nitrogen"
+    appCommand _ = "nitrogen"
 
-    appInit app = appCommand app ++ " --restore"
+    appInit app  = appCommand app ++ " --restore"

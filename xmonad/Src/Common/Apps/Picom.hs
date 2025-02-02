@@ -7,6 +7,6 @@ import           Src.Common.Utils.App (App (..))
 data Picom = Picom
 
 instance App Picom where
-    appCommand = const "picom"
+    appCommand _ = "picom"
 
-    appRun app = appCommand app ++ " --config ~/dotfiles/picom/picom.conf"
+    appRun app   = appCommand app ++ " --config ~/dotfiles/picom/picom.conf"

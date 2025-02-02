@@ -6,9 +6,9 @@ import           Src.Common.Utils.App (App (..))
 data Flameshot = Flameshot
 
 instance App Flameshot where
-    appCommand = const "flameshot"
+    appCommand _ = "flameshot"
 
     -- | Start Flameshot. Flameshot will not copy images to buffer without it
-    appInit    = appCommand
+    appInit      = appCommand
 
-    appRun app = appCommand app ++ " gui"
+    appRun app   = appCommand app ++ " gui"

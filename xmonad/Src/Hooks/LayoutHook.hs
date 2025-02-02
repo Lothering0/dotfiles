@@ -2,16 +2,13 @@ module Src.Hooks.LayoutHook where
 
 import           XMonad
 import           XMonad.Hooks.ManageDocks
-import           XMonad.Layout.LayoutModifier    (ModifiedLayout)
+import           XMonad.Layout.LayoutModifier (ModifiedLayout)
 import           XMonad.Layout.Spacing
 
-import           Src.Common.Apps.CairoDock       (CairoDock (..),
-                                                  CairoDockApp (..))
-import           Src.Common.Utils.App            (App (..))
-import           Src.Common.Utils.Commands       (runCommands)
-
-import           Src.LayoutModifiers.DockHandler (Dock, DockHandlers (..),
-                                                  useDock)
+import           Src.Common.Apps.CairoDock    (CairoDock (..),
+                                               CairoDockApp (..))
+import           Src.Common.Utils.App         (App (..))
+import           Src.Common.Utils.Commands    (runCommands)
 
 
 {-| You can specify and transform your layouts by modifying these values.
@@ -21,7 +18,7 @@ defaults, as xmonad preserves your old layout settings by default.
 
 The available layouts.  Note that each layout is separated by |||,
 which denotes layout choice. -}
-myLayoutHook = spacingWithEdge 8 . myDock . avoidStruts $ layouts
+myLayoutHook = spacingWithEdge 13 . avoidStruts $ layouts
   where
     layouts = Full ||| tiled ||| Mirror tiled
 
@@ -36,12 +33,3 @@ myLayoutHook = spacingWithEdge 8 . myDock . avoidStruts $ layouts
 
     -- | Percent of screen to increment by when resizing panes
     delta   = 3/100
-
-myDock :: LayoutClass l a => l a -> ModifiedLayout Dock l a
-myDock = useDock handlers
-  where
-    handlers :: DockHandlers
-    handlers = DockHandlers
-        { onHide   = spawn . runCommands $ [hideDock CairoDock, appRestart CairoDock]
-        , onActive = spawn . runCommands $ [activateDock CairoDock, appRestart CairoDock]
-        }

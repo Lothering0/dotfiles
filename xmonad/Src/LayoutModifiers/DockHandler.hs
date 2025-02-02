@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module Src.LayoutModifiers.DockHandler where
+module Src.LayoutModifiers.DockHandler {-# DEPRECATED "Use ewmh instead. But module can be helpful if it would be refactored" #-} where
 
 import           Control.Monad                (when)
 import           Data.List                    (isInfixOf)

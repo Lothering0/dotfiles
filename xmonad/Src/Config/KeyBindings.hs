@@ -7,7 +7,6 @@ import           XMonad.Actions.WithAll
 
 import           Src.Common.Apps.Flameshot      (Flameshot (..))
 import           Src.Common.Apps.LayoutSwitcher (LayoutSwitcher (..))
-import           Src.Common.Apps.Nautilus       (Nautilus (..))
 import           Src.Common.Apps.Rofi           (Rofi (..))
 import           Src.Common.Apps.Xmonad         (Xmonad (..), XmonadApp (..))
 
@@ -34,9 +33,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
 
         -- launch rofi
         , ((modm,               xK_p     ), spawn . appRun $ Rofi               )
-
-        -- launch explorer
-        , ((modm,               xK_e     ), spawn . appRun $ Nautilus           )
 
         -- close focused window
         , ((modm .|. shiftMask, xK_c     ), kill                                )

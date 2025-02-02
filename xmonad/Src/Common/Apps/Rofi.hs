@@ -6,6 +6,6 @@ import           Src.Common.Utils.App (App (..))
 data Rofi = Rofi
 
 instance App Rofi where
-    appCommand = const "rofi"
+    appCommand _ = "rofi"
 
-    appRun app = appCommand app ++ " -show drun -config ~/dotfiles/rofi/rofi.rasi"
+    appRun app   = appCommand app ++ " -show drun -config ~/dotfiles/rofi/rofi.rasi"

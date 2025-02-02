@@ -16,17 +16,17 @@ class App a => XmonadApp a where
 
     -- | Run xmessage with a summary of the default keybindings (useful for beginners)
     echoHelp :: a -> String
-    echoHelp = const $ "echo \"" ++ help ++ "\" | xmessage -file -"
+    echoHelp _ = "echo \"" ++ help ++ "\" | xmessage -file -"
     {-# MINIMAL restart, recompile #-}
 
 data Xmonad = Xmonad
 
 instance App Xmonad where
-    appCommand = const "xmonad"
+    appCommand _ = "xmonad"
 
 instance XmonadApp Xmonad where
     restart app = appCommand app ++ " --restart"
-    recompile   = const "xmonad-recompile"
+    recompile _ = "xmonad-recompile"
 
 -- | A copy of the default bindings in simple textual tabular format.
 help :: String

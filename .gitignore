@@ -4,7 +4,10 @@ zsh/.variables.zsh
 xmonad/lib/
 xmonad/log.txt
 
-cairo-dock/current_theme/cairo-dock.conf
+xmobar/lib/
+xmobar/xmobar
+xmobar/xmobar.hi
+xmobar/xmobar.o
 
 kitty/constants.conf
 
