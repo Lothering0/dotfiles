@@ -1,4 +1,5 @@
 ---@type ThemeColors
+---@deprecated
 return {
   meta = {
     name = "material",
@@ -48,13 +49,16 @@ return {
   disabled =     '#464B5D',
   accent =       '#3d59a1',
   visual =       '#2D324A',
-  ["@punctuation"] =  '#EEFFFF',
+  ["@keyword"] = '#7AA2F7',
+  ["@function"] = '#A876FF',
+  ["@punctuation"] = '#EEFFFF',
   ["@variable"] = '#C78BFF',
-  ["@variable.member"] = '#7AA2F7',
+  ["@variable.member"] = '#C78BFF',
   ["@variable.builtin"] = '#75B5FF',
-  ["@variable.parameter"] = '#FFBF60',
-  ["@type"] =  '#75B5FF',
-  ["@type.builtin"] =  '#08DAFF',
+  ["@variable.parameter"] = '#FF5F74',
+  ["@type"] = '#FFBF60',
+  -- ["@type"] =  '#75B5FF',
+  -- ["@type.builtin"] =  '#08DAFF',
   ["@keyword.import"] =  '#54BEFB',
   ["@keyword.export"] =  '#54BEFB',
   -- ["@punctuation"] =  '#89DDFF',
