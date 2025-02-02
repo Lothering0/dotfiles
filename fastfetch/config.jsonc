@@ -8,39 +8,39 @@
     },
     "padding": {
       /*
-       * totalHeight:          15
-       * logoHeight:           7
-       * titleWithBreakHeight: 2
+       * totalHeight: 20
+       * logoHeight:  7
        *
-       * diff:                   totalHeight - logoHeight = 8
-       * center:                 diff / 2 = 4
-       * centerConsideringTitle: diff + titleWithBreakHeight = 6
-       * top:                    centerConsideringTitle - 1 = 5  one line higher 'cause it's too low
+       * diff:        totalHeight - logoHeight = 13
+       * top:         diff / 2 = 6
        */
-      "top": 5,
+      "top": 6,
       "left": 3
     }
   },
   "display": {
-    "separator": " • ",
+    "separator": "",
     "color": {
       "separator": "light_black"
-    },
-    "key": {
-      "paddingLeft": 5
     }
   },
   "modules": [
-    "title",
-    "break",
-
+    /*
+     * OS info
+     */
     {
-      "key": " OS",
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Blue}╭─────────────╮${Color_Off}\""
+    },
+    {
+      "key": "│   OS       │ ",
       "keyColor": "blue",
       "type": "os"
     },
     {
-      "key": " ├ ",
+      "key": "│   Kernel   │ ",
       "keyColor": "blue",
       "separator": {
         "outputColor": "red"
@@ -48,70 +48,108 @@
       "type": "kernel"
     },
     {
-      "key": " ├ ",
+      "key": "│   Packages │ ",
       "keyColor": "blue",
       "type": "packages"
     },
     {
-      "key": " └ ",
-      "keyColor": "blue",
-      "type": "shell"
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Blue}╰─────────────╯${Color_Off}\""
     },
-    "break",
 
+    /*
+     * Environment info
+     */
     {
-      "key": " WM",
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Cyan}╭─────────────╮${Color_Off}\""
+    },
+    {
+      "key": "│   WM       │ ",
       "keyColor": "cyan",
       "type": "command",
       // FIXME: hardcode
       "text": "echo xmonad"
     },
     {
-      "key": " └ ",
+      "key": "│   Terminal │ ",
       "keyColor": "cyan",
       "type": "terminal"
     },
-    "break",
-
     {
-      "key": " PC",
+      "key": "│   Shell    │ ",
+      "keyColor": "cyan",
+      "type": "shell"
+    },
+    {
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Cyan}╰─────────────╯${Color_Off}\""
+    },
+
+    /*
+     * System info
+     */
+    {
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Magenta}╭─────────────╮${Color_Off}\""
+    },
+    {
+      "key": "│   PC       │ ",
       "keyColor": "magenta",
       "type": "host"
     },
     {
-      "key": " ├ ",
+      "key": "│   CPU      │ ",
       "keyColor": "magenta",
       "type": "cpu"
     },
     {
-      "key": " ├󰍹 ",
+      "key": "│ 󰍹  GPU      │ ",
       "keyColor": "magenta",
       "type": "gpu"
     },
     {
-      "key": " ├ ",
+      "key": "│   RAM      │ ",
       "keyColor": "magenta",
       "type": "memory"
     },
     {
-      "key": " ├ ",
-      "keyColor": "magenta",
-      "type": "uptime"
+      "key": " ",
+      "shell": "/bin/zsh",
+      "type": "command",
+      "text": "echo \"${Magenta}╰─────────────╯${Color_Off}\""
     },
-    {
-      "key": " └ ",
-      "keyColor": "magenta",
-      "type": "display"
-    },
-    "break",
 
+    /*
+     * Colors
+     */
+    {
+      "key": " ",
+      "keyColor": "cyan",
+      "type": "command",
+      "text": "echo \"╭─────────────╮\""
+    },
     {
       "key": " ",
       "shell": "/bin/zsh",
       "type": "command",
       "outputColor": "default",
       // NOTICE: for list of colors see ~/dotfiles/zsh/.colors.zsh
-      "text": "echo \"${Yellow}󰮯  ${Red}󰊠  ${Green}󰊠  ${Blue}󰊠  ${Magenta}󰊠  ${Cyan}󰊠  ${White}󰊠  ${IBlack}󰊠 ${Color_Off}\""
+      "text": "echo \"│   Colors   │ ${Yellow}󰮯  ${Red}󰊠  ${Green}󰊠  ${Blue}󰊠  ${Magenta}󰊠  ${Cyan}󰊠  ${White}󰊠  ${IBlack}󰊠 ${Color_Off}\""
+    },
+    {
+      "key": " ",
+      "keyColor": "cyan",
+      "type": "command",
+      "text": "echo \"╰─────────────╯\""
     }
   ]
 }
