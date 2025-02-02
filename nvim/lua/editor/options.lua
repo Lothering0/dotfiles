@@ -58,5 +58,6 @@ vim.filetype.add({
   pattern = {
     ['.*/.xmobarrc'] = 'haskell',
     ['.*/*.rasi']    = 'scss',
+    ['.*/.env.*']    = 'sh',
   },
 })
