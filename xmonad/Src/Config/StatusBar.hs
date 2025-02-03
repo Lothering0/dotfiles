@@ -18,8 +18,11 @@ myPP = def
            "<box type=Bottom width=2 color=#89ddff> <fc=#89ddff>"
         ++ workspaceId
         ++ "</fc> </box>"
-    , ppHidden  = \ workspaceId -> " " ++ workspaceId ++ " "
-    , ppUrgent  = \ workspaceId -> " " ++ workspaceId ++ " "
+    , ppHidden  = \ workspaceId -> " <fc=#464b5d>" ++ workspaceId ++ "</fc> "
+    , ppUrgent  = \ workspaceId ->
+           "<box type=Bottom width=2 color=#f78c6c> <fc=#f78c6c>"
+        ++ workspaceId
+        ++ "</fc> </box>"
     , ppLayout  = const ""
     , ppTitle   = const ""
     -- , ppTitle   = formatTitle
