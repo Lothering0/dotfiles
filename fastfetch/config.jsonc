@@ -71,9 +71,7 @@
     {
       "key": "│   WM       │ ",
       "keyColor": "cyan",
-      "type": "command",
-      // FIXME: hardcode
-      "text": "echo xmonad"
+      "type": "wm"
     },
     {
       "key": "│   Terminal │ ",
