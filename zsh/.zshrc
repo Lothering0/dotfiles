@@ -20,12 +20,13 @@ if [ -f ~/dotfiles/zsh/.variables.zsh ]; then
   source ~/dotfiles/zsh/.variables.zsh
 fi
 
+alias Hyprland="Hyprland -c ~/dotfiles/hyprland/hyprland.conf"
 alias xmonad-recompile="~/dotfiles/xmonad/xmonad_recompile.sh"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias fastfetch="fastfetch -c ~/dotfiles/fastfetch/config.jsonc"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias ghci="ghci -ghci-script ~/dotfiles/ghc/ghci.conf"
-alias js="node ~/projects/repl/index.js" # https://github.com/Lothering0/repl
+alias js="node ~/projects/pets/repl/index.js"  # https://github.com/Lothering0/repl
 
 alias dt="cd ~/dotfiles"
 alias pr="cd ~/projects"
