@@ -18,9 +18,12 @@
       ]
     }
   },
-  "prettier.printWidth": 120,
+  "prettier": {
+    "printWidth": 120
+  },
   "eslint": {
-    "autoFixOnSave": true
+    "autoFixOnSave": true,
+    "validate": ["typescript"]
   },
   "sumneko-lua": {
     "enableNvimLuaDev": true
