@@ -18,9 +18,11 @@ git clone https://github.com/Lothering0/dotfiles.git ~/dotfiles
 * ~~**[Autokey](https://github.com/autokey/autokey)** - bind Shift-Space to Escape (for VIM purposes)~~
 * **[Kanata](https://github.com/jtroo/kanata)** - Keybindings
 * **[Zoxide](https://github.com/ajeetdsouza/zoxide)** - smarter `cd` command
-* **Neovim** - text editor
-* **Cairo Dock** - dock
-* **jq** - CLI JSON (de)serializer
+* **[Neovim](https://neovim.io/)** - text editor
+* **[Cairo Dock](https://glx-dock.org/)** - dock for X11
+* **[jq](https://jqlang.org/)** - CLI JSON (de)serializer
+* **[htop](https://htop.dev/)** - an interactive terminal process monitoring
+* **[nvtop](https://github.com/Syllo/nvtop)** - an interactive terminal GPU process monitoring
 
 # Cool packages
 * **[Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)** - emoji font
