@@ -180,6 +180,7 @@ configuration {
 
 window {
   width: 25%;
+  border-radius: 12px;
 }
 
 element {
