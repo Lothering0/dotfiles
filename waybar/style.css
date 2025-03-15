@@ -39,7 +39,7 @@ tooltip label {
 #mpd,
 #workspaces {
     padding: 0 20px;
-    color: #ffffff;
+    color: #a6accd;
 }
 
 #tray,
@@ -49,7 +49,7 @@ tooltip label {
 
 window#waybar {
     background-color: transparent;
-    color: #ffffff;
+    color: #a6accd;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -119,8 +119,19 @@ button:hover {
     /* box-shadow: inset 0 -2px #89ddff; */
 }
 
+@keyframes urgent_blink {
+  to {
+    opacity: 0.2;
+  }
+}
+
 #workspaces button.urgent {
     color: #f78c6c;
+    animation-name: urgent_blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #mode {
@@ -144,7 +155,7 @@ button:hover {
 
 #battery {
     background-color: #0f111a;
-    color: #ffffff;
+    color: #a6accd;
 }
 
 #battery.charging,
@@ -153,9 +164,9 @@ button:hover {
     color: #82aaff;
 }
 
-@keyframes blink {
+@keyframes battery_blink {
     to {
-        background-color: #ffffff;
+        background-color: #a6accd;
         color: #000000;
     }
 }
@@ -164,7 +175,7 @@ button:hover {
 #battery.critical:not(.charging) {
     background-color: #0f111a;
     color: #ff5370;
-    animation-name: blink;
+    animation-name: battery_blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
@@ -177,7 +188,7 @@ button:hover {
 
 #power-profiles-daemon.performance {
     background-color: #0f111a;
-    color: #f07178;
+    color: #ff9cac;
 }
 
 #power-profiles-daemon.balanced {
