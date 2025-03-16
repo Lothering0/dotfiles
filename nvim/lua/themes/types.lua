@@ -2,6 +2,7 @@
 
 ---@alias Theme
 ---| AuraTheme
+---| CatppuccinTheme
 ---| DarkTheme
 ---| HorizonTheme
 ---| MaterialTheme
@@ -11,6 +12,7 @@
 
 ---@alias ThemeName
 ---| AuraThemeName
+---| CatppuccinThemeName
 ---| DarkThemeName
 ---| HorizonThemeName
 ---| MaterialThemeName
@@ -20,6 +22,7 @@
 
 ---@alias ThemeStyle
 ---| AuraThemeStyle
+---| CatppuccinThemeStyle
 ---| DarkThemeStyle
 ---| HorizonThemeStyle
 ---| MaterialThemeStyle

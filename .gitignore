@@ -1,3 +1,6 @@
+**/constants.*
+!**/constants.example.*
+
 zsh/.aliases.zsh
 zsh/.variables.zsh
 
@@ -9,8 +12,5 @@ xmobar/xmobar
 xmobar/xmobar.hi
 xmobar/xmobar.o
 
-kitty/constants.conf
-
-nvim/lua/constants.lua
 nvim/plugin/
 nvim/snapshots/

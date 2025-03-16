@@ -169,13 +169,11 @@ configuration {
 }
 
 @theme "/dev/null"
+@import "./constants"
 
 * {
-  bg: #0f111a;
-  bg-alt: #090b10;
-
-  background-color: @bg;
-  color: #a6accd;
+  background-color: @my-background;
+  color: @my-foreground;
 }
 
 window {
@@ -189,7 +187,7 @@ element {
 }
 
 element selected {
-  color: #89ddff;
+  color: @my-accent;
 }
 
 element-text {
@@ -205,27 +203,27 @@ element-icon {
 
 inputbar {
   children: [prompt, entry];
-  background-color: @bg-alt;
+  background-color: @my-background-alt;
   padding: 15 20;
 }
 
 prompt {
-  text-color: #717CB4;
+  text-color: @my-prompt-color;
   background-color: inherit;
 }
 
 entry {
   placeholder: "Find application";
-  placeholder-color: #1f2233;
+  placeholder-color: @my-placeholder-color;
   cursor: text;
-  cursor-color: #ffcc00;
+  cursor-color: @my-cursor-color;
   cursor-width: 2;
   blink: false;
   background-color: inherit;
 }
 
 listview {
-  background-color: @bg;
+  background-color: @my-background;
   columns: 1;
   lines: 8;
   padding: 5 0 7 0;

@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin 46
-    offset = 26x62
+    offset = (26, 62)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -330,6 +330,7 @@
     per_monitor_dpi = false
 
 
+# DEFAULT THEME
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.

@@ -1,3 +1,5 @@
+@import url("./constants.css");
+
 * {
     border-radius: 9999px;
     /* `otf-font-awesome` is required to be installed for icons */
@@ -9,16 +11,39 @@
 tooltip {
     border: 1px solid #090b10;
     border-radius: 5px;
-    background-color: #0f111a;
-    color: #717cb4;
+    background-color: @background;
+    color: @gray;
     font-family: Cascadia Mono;
     font-size: 30px;
 }
 
 tooltip label {
-    color: #a6accd;
+    color: @foreground;
     font-family: Cascadia Mono;
     font-size: 15px;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#disk,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#mode,
+#tray,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#workspaces {
+    background-color: @background;
+    color: @foreground;
+    border: 1px solid @border;
 }
 
 #backlight,
@@ -39,7 +64,6 @@ tooltip label {
 #mpd,
 #workspaces {
     padding: 0 20px;
-    color: #a6accd;
 }
 
 #tray,
@@ -49,7 +73,7 @@ tooltip label {
 
 window#waybar {
     background-color: transparent;
-    color: #a6accd;
+    color: @foreground;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -99,24 +123,18 @@ button:hover {
     background-color: #a37800;
 }
 
-#clock,
-#workspaces {
-    background-color: #0f111a;
-    color: #a6accd;
-}
-
 #workspaces button {
     padding: 0 5px;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
-    color: #a6accd;
+    color: @foreground;
 }
 
 #workspaces button.active {
-    color: #89ddff;
-    /* box-shadow: inset 0 -2px #89ddff; */
+    color: @accent;
+    /* box-shadow: inset 0 -2px @accent; */
 }
 
 @keyframes urgent_blink {
@@ -126,7 +144,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    color: #f78c6c;
+    color: @orange;
     animation-name: urgent_blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -154,27 +172,27 @@ button:hover {
 }
 
 #battery {
-    background-color: #0f111a;
-    color: #a6accd;
+    background-color: @background;
+    color: @foreground;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: #0f111a;
-    color: #82aaff;
+    background-color: @background;
+    color: @blue;
 }
 
 @keyframes battery_blink {
     to {
-        background-color: #a6accd;
+        background-color: @foreground;
         color: #000000;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #0f111a;
-    color: #ff5370;
+    background-color: @background;
+    color: @critical;
     animation-name: battery_blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -183,22 +201,20 @@ button:hover {
 }
 
 #power-profiles-daemon {
+    background-color: @background;
     padding-right: 15px;
 }
 
 #power-profiles-daemon.performance {
-    background-color: #0f111a;
-    color: #ff9cac;
+    color: @pink;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #0f111a;
-    color: #ffcb6b;
+    color: @yellow;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #0f111a;
-    color: #c3e88d;
+    color: @green;
 }
 
 label:focus {
@@ -206,13 +222,11 @@ label:focus {
 }
 
 #cpu {
-    background-color: #0f111a;
-    color: #89ddff;
+    color: @cyan;
 }
 
 #memory {
-    background-color: #0f111a;
-    color: #82aaff;
+    color: @blue;
 }
 
 #disk {
@@ -228,7 +242,7 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #ff5370;
+    background-color: @critical;
 }
 
 #pulseaudio {
@@ -247,7 +261,7 @@ label:focus {
 }
 
 #wireplumber.muted {
-    background-color: #ff5370;
+    background-color: @critical;
 }
 
 #custom-media {
@@ -269,11 +283,7 @@ label:focus {
 }
 
 #temperature.critical {
-    background-color: #ff5370;
-}
-
-#tray {
-    background-color: #0f111a;
+    background-color: @critical;
 }
 
 #tray > .passive {
@@ -282,7 +292,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #ff5370;
+    background-color: @critical;
 }
 
 #idle_inhibitor {
@@ -300,7 +310,7 @@ label:focus {
 }
 
 #mpd.disconnected {
-    background-color: #ff5370;
+    background-color: @critical;
 }
 
 #mpd.stopped {

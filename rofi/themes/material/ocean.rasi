@@ -1,0 +1,9 @@
+* {
+  my-background: #0f111a;
+  my-background-alt: #090b10;
+  my-foreground: #a6accd;
+  my-accent: #89ddff;
+  my-cursor-color: #ffcc00;
+  my-placeholder-color: #1f2233;
+  my-prompt-color: #717CB4;
+}
