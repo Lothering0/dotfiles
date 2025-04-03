@@ -1,0 +1,97 @@
+(defcfg
+  ;; see https://github.com/jtroo/kanata/blob/main/docs/config.adoc#linux-only-linux-device-detect-mode
+  linux-device-detect-mode keyboard-only
+
+  ;; Analog of X command "xset r rate 220 30"
+  linux-x11-repeat-delay-rate 220,30
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(defvar
+  tap-timeout 5
+  hold-timeout 220
+  hold-timeout-short 180
+)
+
+;; see https://github.com/jtroo/kanata/discussions/422
+(deftemplate tap-and-hold (tap-key hold-key)
+  (multi f24 (tap-hold-release $tap-timeout $hold-timeout $tap-key $hold-key))
+)
+
+(deftemplate tap-and-hold-short (tap-key hold-key)
+  (multi f24 (tap-hold-release $tap-timeout $hold-timeout-short $tap-key $hold-key))
+)
+
+(deflayermap (default)
+  a (t! tap-and-hold-short a lsft)
+  s (t! tap-and-hold s lctl)
+  d (t! tap-and-hold d lalt)
+  f (t! tap-and-hold f lmet)
+  k (t! tap-and-hold k ralt)
+  l (t! tap-and-hold l rctl)
+  ; (t! tap-and-hold-short ; rsft)
+  m (t! tap-and-hold m rmet)
+
+  ;; Shift+Space = esc. Holded Space = vim layer
+  spc (fork (
+    multi f24 (tap-hold $tap-timeout 220 spc (layer-while-held vim))
+  ) esc (lsft rsft))
+
+  ralt (t! tap-and-hold (layer-switch numbers) (layer-while-held numbers))
+)
+
+(deflayermap (numbers)
+  a (t! tap-and-hold 1 lsft)
+  s (t! tap-and-hold 2 lctl)
+  d (t! tap-and-hold 3 lalt)
+  f (t! tap-and-hold 4 lmet)
+  g 5
+  h 6
+  j (t! tap-and-hold 7 j)
+  k (t! tap-and-hold 8 ralt)
+  l (t! tap-and-hold 9 rctl)
+  ; (t! tap-and-hold 0 rsft)
+  m (t! tap-and-hold m rmet)
+
+  c -
+  v =
+
+  u [
+  i ]
+
+  o \
+  q grv
+
+  ;; Shift+Space = esc. Holded Space = vim layer
+  spc (fork (
+    multi f24 (tap-hold $tap-timeout $hold-timeout spc (layer-while-held vim))
+  ) esc (lsft rsft))
+
+  ralt (layer-switch default)
+)
+
+(deflayermap (vim)
+  j left
+  c down
+  v up
+  p right
+  ' ret
+
+  i bspc
+
+  ;; Ctrl-C
+  r C-.
+  ;; Ctrl-V
+  t C-i
+  ;; Ctrl-X
+  b C-b
+)
