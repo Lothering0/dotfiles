@@ -39,8 +39,9 @@ return {
   fg =           '#A6ACCD',
   text =         '#717CB4',
   comments =     '#464B5D',
-  -- Current line in telescope or lines in context menus
+  -- Current line in telescope or lines in context menus, bracket pairs, matchings
   selection =    '#1F2233',
+  -- Current line
   contrast =     '#090B10',
   -- Inactive scope line
   active =       '#1A1C25',

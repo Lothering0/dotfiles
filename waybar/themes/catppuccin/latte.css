@@ -1,0 +1,15 @@
+@define-color background #eff1f5;
+@define-color foreground #4c4f69;
+@define-color border     #acb0be;
+@define-color accent     #8839ef;
+@define-color critical   #d20f39;
+
+@define-color gray   #bcc0cc;
+@define-color red    #d20f39;
+@define-color green  #40a02b;
+@define-color blue   #1e66f5;
+@define-color yellow #df8e1d;
+@define-color orange #fe640b;
+@define-color pink   #ea76cb;
+@define-color cyan   #179299;
+@define-color purple #8839ef;

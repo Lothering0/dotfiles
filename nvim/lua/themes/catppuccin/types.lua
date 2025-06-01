@@ -2,6 +2,6 @@
 
 ---@alias CatppuccinThemeName 'catppuccin'
 
----@alias CatppuccinThemeStyle 'mocha'
+---@alias CatppuccinThemeStyle 'mocha' | 'latte'
 
----@alias CatppuccinTheme 'catppuccin/mocha'
+---@alias CatppuccinTheme 'catppuccin/mocha' | 'catppuccin/latte'

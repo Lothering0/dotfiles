@@ -5,7 +5,7 @@ return {
   get_highlights = function(colors)
     ---@type PluginHighlights
     return {
-      CocFloating = { bg = colors.floating_window or colors.selection },
+      CocFloating = { fg = colors.fg, bg = colors.floating_window or colors.selection },
       FgCocErrorFloatBgCocFloating = { fg = colors.error },
       CocPumSearch = { fg = colors.accent },
       CocPumVirtualText = { fg = colors.comments },
