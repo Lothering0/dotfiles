@@ -20,6 +20,7 @@ return {
       lualine_b_diagnostics_hint_command = { link = "lualine_b_diagnostics_hint_normal" },
       lualine_b_diagnostics_hint_inactive = { link = "lualine_b_diagnostics_hint_normal" },
       lualine_b_diagnostics_hint_terminal = { link = "lualine_b_diagnostics_hint_normal" },
+      lualine_c_normal = { fg = colors.line_numbers, bg = colors.bg },
       -- Left separator of A section
       lualine_transitional_lualine_a_mode_to_StatusLine = { fg = colors.selection, bg = colors.bg },
     }

@@ -84,7 +84,13 @@ require('lualine').setup {
       },
       'diagnostics'
     },
-    lualine_c = {},
+    lualine_c = {
+      {
+        'filename',
+        file_status = false,  -- Displays file status (readonly, modified)
+        path = 1,  -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = pretty path (e.g., ~/path/to/file or repo/path/to/file)
+      }
+    },
     lualine_x = {
       {
         require("noice").api.statusline.mode.get,
