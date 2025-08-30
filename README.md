@@ -28,6 +28,8 @@ git clone https://github.com/Lothering0/dotfiles.git ~/dotfiles
 * **[Noto Fonts Emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)** - emoji font
 * **[Bibata Cursor](https://github.com/ful1e5/Bibata_Cursor)** - cursor theme
 * **[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** - icon theme. Lxappearance
+* **[nwg-dock-hyprland](https://archlinux.org/packages/extra/x86_64/nwg-dock-hyprland)** - dock for Hyprland
+* **[nwg-look](https://archlinux.org/packages/extra/x86_64/nwg-look/)** - GTK customization for NWG
 * **Lxappearance** - switching icons. lxappearance-gtk3 recommended
 * ~~**Neofetch** - system information~~
 * **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)** - system information
