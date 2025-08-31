@@ -9,4 +9,5 @@ return {
   IS_CONTRAST = false,
   SHOW_NON_TEXT = NonTextVisibility.TRAILING,
   HAS_STRING_BACKGROUND = true,
+  SHOW_PATH_TO_FILE = true,
 }

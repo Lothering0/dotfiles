@@ -1,5 +1,9 @@
 local highlight = require("helpers").highlight
 local colors = require("themes/init")
+local helpers = require("helpers")
+local constants = require("constants")
+local SHOW_PATH_TO_FILE = constants.SHOW_PATH_TO_FILE
+local ternary = helpers.ternary
 
 local function set_mode_color(color, bg_color)
   local bg = bg_color or colors.contrast
@@ -84,13 +88,17 @@ require('lualine').setup {
       },
       'diagnostics'
     },
-    lualine_c = {
+    lualine_c = ternary(
+      SHOW_PATH_TO_FILE,
       {
-        'filename',
-        file_status = false,  -- Displays file status (readonly, modified)
-        path = 1,  -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = pretty path (e.g., ~/path/to/file or repo/path/to/file)
-      }
-    },
+        {
+          'filename',
+          file_status = false,  -- Displays file status (readonly, modified)
+          path = 1,  -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = pretty path (e.g., ~/path/to/file or repo/path/to/file)
+        }
+      },
+      {}
+    ),
     lualine_x = {
       {
         require("noice").api.statusline.mode.get,

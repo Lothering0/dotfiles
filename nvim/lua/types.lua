@@ -81,5 +81,6 @@ local CtermColor = {
 ---@field IS_CONTRAST boolean If true, editor has contrast elements (especially, sidebars)
 ---@field SHOW_NON_TEXT NonTextVisibility Determines when non-text (like whitespaces and linebreaks) should be visible
 ---@field HAS_STRING_BACKGROUND boolean Should string literals has a background
+---@field SHOW_PATH_TO_FILE boolean Should show path to file in lualine
 
 return { CtermColor = CtermColor, VimMode = VimMode, NonTextVisibility = NonTextVisibility }
