@@ -48,4 +48,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $HOME/dotfiles/zsh/.p10k.zsh
 
+if [ -f ~/projects/shell-color-scripts/colorscript.sh ]; then
+  ~/projects/shell-color-scripts/colorscript.sh random
+fi
+
 eval "$(zoxide init zsh --cmd cd)"
