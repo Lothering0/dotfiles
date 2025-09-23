@@ -2,7 +2,7 @@ https://github.com/jtroo/kanata/wiki/Avoid-using-sudo-on-Linux
 
 ```sh
 # Add uinput group if it is not exist
-sudo groupadd uinput
+sudo groupadd --system uinput
 
 sudo usermod -aG input,uinput $USER
 ```
