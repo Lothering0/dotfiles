@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 45, // Waybar height (to be removed for auto height)
+    // "height": 45, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 10, // Gaps between modules (10px)
     // Choose the order of the modules
@@ -24,6 +24,10 @@
         "battery",
         "battery#bat2"
     ],
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl --batch dispatch workspace m-1",
+        "on-scroll-down": "hyprctl --batch dispatch workspace m+1"
+    },
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -184,17 +188,24 @@
         },
         "on-click": "pavucontrol"
     },
+    // See: https://github.com/Alexays/Waybar/wiki/Module:-Custom
     "custom/media": {
-        "format": "{icon} {}",
+        "format": "{icon} {text}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+            "spotify-playing": "   ",
+            "spotify-paused": "   ",
+            "telegram-playing": "   ",
+            "telegram-paused": "   ",
+            "default": ""
         },
+        "on-click": "playerctl --player=spotify,TelegramDesktop play-pause",
+        "on-scroll-up": "playerctl --player=spotify,TelegramDesktop previous",
+        "on-scroll-down": "playerctl --player=spotify,TelegramDesktop next",
+        "restart-interval": 900, // Every 15 minutes
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "exec": "node $HOME/dotfiles/waybar/mediaplayer.js 2> /dev/null" // Script in resources folder
     },
     "custom/power": {
         "format" : "⏻ ",
