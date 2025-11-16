@@ -52,7 +52,7 @@ const PlayerCliName = {
  * @readonly
  * @type {PlayerCliName[]}
  */
-const players = ["spotify", "TelegramDesktop"];
+const players = [PlayerCliName.SPOTIFY, PlayerCliName.TELEGRAM];
 
 /**
  * @typedef SongInfo

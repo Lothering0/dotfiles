@@ -198,14 +198,14 @@
             "spotify-paused": "   ",
             "telegram-playing": "   ",
             "telegram-paused": "   ",
-            "default": ""
+            "default": "󰝚 "
         },
         "on-click": "playerctl --player=spotify,TelegramDesktop play-pause",
         "on-scroll-up": "playerctl --player=spotify,TelegramDesktop previous",
         "on-scroll-down": "playerctl --player=spotify,TelegramDesktop next",
-        "restart-interval": 900, // Every 15 minutes
+        "restart-interval": 300, // Every 5 minutes
         "escape": true,
-        "exec": "node $HOME/dotfiles/waybar/mediaplayer.js 2> /dev/null" // Script in resources folder
+        "exec": "node $HOME/dotfiles/waybar/mediaplayer/dist/index.cjs 2> /dev/null" // Script in resources folder
     },
     "custom/power": {
         "format" : "⏻ ",

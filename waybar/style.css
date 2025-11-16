@@ -117,6 +117,10 @@ button:hover {
     box-shadow: initial;
 }
 
+#custom-media.default {
+  color: @gray;
+}
+
 #custom-media.spotify {
   color: @green;
 }

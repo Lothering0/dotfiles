@@ -1,0 +1,32 @@
+{
+  "name": "waybar-mediaplayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./esbuild.config.mjs",
+    "start": "npm run build && clear && node ./dist/index.cjs",
+    "start:tsc": "clear && npm run tsc && npm run build && clear && node ./dist/index.cjs",
+    "tsc": "tsc --project ./tsconfig.json -noEmit",
+    "tsc:watch": "tsc --project ./tsconfig.json --watch",
+    "watch": "nodemon dist/index.js",
+    "nodemon": "nodemon",
+    "tsc:nodemon:watch": "tsc --watch index.ts && nodemon index.js",
+    "lint": "eslint --fix",
+    "prettier": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "esbuild": "^0.25.1",
+    "eslint": "^9.39.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4"
+  }
+}
