@@ -5,6 +5,6 @@ import { main } from './main'
 pipe(
   main,
   // Effect.tapLeft(handleErrors),
-  Effect.schedule({ seconds: 2 }),
+  Effect.schedule({ seconds: 2 }, { immediate: true }),
   Effect.runAsync(),
 )
