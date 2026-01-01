@@ -6,8 +6,17 @@ Dotfiles
 git clone https://github.com/Lothering0/dotfiles.git ~/dotfiles
 ```
 
+# Fonts
+**[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)**
+Font with emojis
+
+**[Maple Mono Normal NL](https://github.com/subframe7536/maple-font/releases)**
+Normal - non-nerd-font (without extra emojis)
+NL - no ligatures
+
 # Useful tools
-* **[Yay](https://github.com/Jguer/yay)** - package manager for installing packages from AUR
+* ~~**[Yay](https://github.com/Jguer/yay)** - package manager for installing packages from AUR~~
+* **[Paru](https://github.com/Morganamilo/paru)** - package manager for installing packages from AUR
 * **[Dmenu](https://wiki.archlinux.org/title/dmenu)** - programs manager
 * **[Rofi](https://github.com/davatorium/rofi)** - programs manager, but better
 * **[Dunst](https://wiki.archlinux.org/title/Dunst)** - notifications. Working with [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/)

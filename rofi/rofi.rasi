@@ -63,7 +63,7 @@ configuration {
   show-icons: true;
   display-drun: "";
   drun-display-format: "{icon} {name}";
-  font: "Cascadia Mono 12";
+  font: "Maple Mono Normal NL Semibold 10";
   modes: "drun";
   icon-theme: "Papirus-Dark";
   /* kb-mode-complete: ""; */
@@ -226,5 +226,5 @@ listview {
   background-color: @my-background;
   columns: 1;
   lines: 8;
-  padding: 5 0 7 0;
+  padding: 5 0 10 0;
 }
