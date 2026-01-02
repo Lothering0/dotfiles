@@ -24,24 +24,14 @@ local function get_highlights(plugins)
   return highlights
 end
 
---- Applies highlights in 1 ms after initialization
----@param highlights PluginHighlights
-local function set_highlights_deferred(highlights)
-  local timer = vim.loop.new_timer()
-
-  timer:start(1, 0, vim.schedule_wrap(function()
-    timer:stop()
-
-    for name, value in pairs(highlights) do
-      helpers.highlight(name, value)
-    end
-  end))
-end
-
 ---@param plugins Plugin[]
 local function apply_highlights(plugins)
   local highlights = get_highlights(plugins)
-  set_highlights_deferred(highlights)
+  helpers.defer(function()
+    for name, value in pairs(highlights) do
+      helpers.highlight(name, value)
+    end
+  end)
 end
 
 return apply_highlights

@@ -20,7 +20,6 @@ if [ -f ~/dotfiles/zsh/.variables.zsh ]; then
   source ~/dotfiles/zsh/.variables.zsh
 fi
 
-alias Hyprland="Hyprland -c ~/dotfiles/hyprland/hyprland.conf"
 alias xmonad-recompile="~/dotfiles/xmonad/xmonad_recompile.sh"
 alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias fastfetch="fastfetch -c ~/dotfiles/fastfetch/config.jsonc"
@@ -42,7 +41,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
-VI_MODE_SET_CURSOR=true
+VI_MODE_SET_CURSOR=false
 source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

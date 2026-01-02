@@ -37,33 +37,6 @@ function helpers.is_surrounded(symbols)
   return vim_fn .. '=="' .. symbols .. '"'
 end
 
---[=====[
-  Example:
-
-  if_surrounded({
-    "{}": "bar"
-  }, "b")
-
-  Result:
-  Cursor between braces: {|}. Then press b and result should be: {bar}.
-  In other cases result should be as expected "b"
-
-  CAUTION:
-  By some reason behaviour of this function is unexpected. It is not getting
-  string value of vim maps from string literal (e.g. <Space><Space><Left>)
-  instead function executing this string. So, function is not working
---]=====]
-local function if_surrounded(table, key_to_remap)
-  local expression = ""
-
-  for symbols, vim_expression in pairs(table) do
-    expression = expression .. helpers.is_surrounded(symbols) .. " ? " .. vim_expression .. " : "
-  end
-
-  expression = expression .. key_to_remap
-  return helpers.map("i", key_to_remap, expression, true)
-end
-
 ---@param folder string
 ---@return fun(file: string): string
 function helpers.get_config_path(folder)
@@ -98,6 +71,17 @@ function helpers.includes(t, value)
   end
 
   return false
+end
+
+--- Calls function in 1 ms after initialization
+---@param fn fun(): any
+function helpers.defer(fn)
+  local timer = vim.loop.new_timer()
+
+  timer:start(1, 0, vim.schedule_wrap(function()
+    timer:stop()
+    fn()
+  end))
 end
 
 return helpers

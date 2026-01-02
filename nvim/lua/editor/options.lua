@@ -61,3 +61,7 @@ vim.filetype.add({
     ['.*/.env.*']    = 'sh',
   },
 })
+
+helpers.defer(function ()
+  vim.o.guicursor = "a:block-blinkon1000-blinkoff10-Cursor,n-v-sm:block,i-c-ci-ve:ver20,r-cr-o:hor20"
+end)
