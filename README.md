@@ -1,17 +1,20 @@
 Dotfiles
 
 # Installation
-
 ```sh
 git clone https://github.com/Lothering0/dotfiles.git ~/dotfiles
 ```
 
 # Fonts
 **[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)**
+
 Font with emojis
 
+
 **[Maple Mono Normal NL](https://github.com/subframe7536/maple-font/releases)**
+
 Normal - non-nerd-font (without extra emojis)
+
 NL - no ligatures
 
 # Useful tools
