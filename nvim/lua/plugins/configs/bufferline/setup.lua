@@ -1,5 +1,5 @@
 local bufferline = require("bufferline")
-local ternary = require("helpers").ternary
+local ternary = require("utils").ternary
 ---@type ConfigConstants
 local constants = require("constants")
 local IS_CONTRAST = constants.IS_CONTRAST

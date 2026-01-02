@@ -1,7 +1,7 @@
 ---@type ConfigConstants
 local constants = require("constants")
-local helpers = require("helpers")
-local ternary, includes = helpers.ternary, helpers.includes
+local utils = require("utils")
+local ternary, includes = utils.ternary, utils.includes
 local NonTextVisibility = require("types").NonTextVisibility
 local SHOW_NON_TEXT = constants.SHOW_NON_TEXT
 

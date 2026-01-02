@@ -1,21 +1,18 @@
 ---@type ConfigConstants
 local constants = require("constants")
-local helpers = require("helpers")
+local utils = require("utils")
 local NonTextVisibility = require("types").NonTextVisibility
 
 local SHOW_NON_TEXT = constants.SHOW_NON_TEXT
 
-local ternary, includes = helpers.ternary, helpers.includes
-local g = helpers.g
-local o = helpers.o
-local c = helpers.c
+local ternary, includes = utils.ternary, utils.includes
 
--- g.mapleader = " "
-o.number = true
-o.scrolloff = 10
--- o.smarttab
+-- vim.g.mapleader = " "
+vim.opt.number = true
+vim.opt.scrolloff = 10
+-- vim.opt.smarttab
 
-c [[
+vim.cmd [[
   set autoindent
   set tabstop=2 expandtab
   set shiftwidth=2 expandtab
@@ -24,10 +21,10 @@ c [[
 	set noswapfile
 	set noshowmode
 ]]
-o.cursorline = true
-o.wrap = true
-o.breakindent = true
-o.listchars:append({
+vim.opt.cursorline = true
+vim.opt.wrap = true
+vim.opt.breakindent = true
+vim.opt.listchars:append({
   space = ternary(
     not includes({ NonTextVisibility.NEVER, NonTextVisibility.TRAILING }, SHOW_NON_TEXT),
     "·",
@@ -41,18 +38,18 @@ o.listchars:append({
   trail = ternary(SHOW_NON_TEXT ~= NonTextVisibility.NEVER, "·", " "),
   tab = "▎ ",
 })
-o.list = true
-o.termguicolors = true
-o.ignorecase = true
-o.signcolumn = "yes"
-o.encoding = "utf-8"
+vim.opt.list = true
+vim.opt.termguicolors = true
+vim.opt.ignorecase = true
+vim.opt.signcolumn = "yes"
+vim.opt.encoding = "utf-8"
 -- Hide empty lines (~) and separator line
-o.fillchars:append({ vert = " ", eob = " " })
+vim.opt.fillchars:append({ vert = " ", eob = " " })
 -- Hide current mode (-- INSERT --/-- VISUAL -- etc)
--- o.nocompatible = true
-o.updatetime = 300
+-- vim.opt.nocompatible = true
+vim.opt.updatetime = 300
 
-g.vim_json_conceal = 0
+vim.g.vim_json_conceal = 0
 
 vim.filetype.add({
   pattern = {
@@ -62,6 +59,6 @@ vim.filetype.add({
   },
 })
 
-helpers.defer(function ()
+utils.defer(function ()
   vim.o.guicursor = "a:block-blinkon1000-blinkoff10-Cursor,n-v-sm:block,i-c-ci-ve:ver20,r-cr-o:hor20"
 end)

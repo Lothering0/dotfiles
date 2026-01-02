@@ -1,4 +1,4 @@
-local ternary = require("helpers").ternary
+local ternary = require("utils").ternary
 
 ---@type PluginHighlightsExport
 return {

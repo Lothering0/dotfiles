@@ -1,5 +1,5 @@
-local helpers = require("helpers")
-local get_path_to = helpers.get_config_path("coc")
+local utils = require("utils")
+local get_path_to = utils.get_config_path("coc")
 
 require(get_path_to "options")
 require(get_path_to "mappings")

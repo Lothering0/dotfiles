@@ -1,6 +1,6 @@
 local VimMode = require("types").VimMode
-local helpers = require("helpers")
-local map = helpers.map
+local utils = require("utils")
+local map = utils.map
 
 -- Find files using Telescope command-line sugar.
 -- By file name

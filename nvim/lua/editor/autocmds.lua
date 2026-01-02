@@ -1,10 +1,6 @@
-local helpers = require("helpers")
-local augroup = helpers.augroup
-local autocmd = helpers.autocmd
-
 -- Highlight yank
-augroup("YankHighlight", { clear = true })
-autocmd("TextYankPost", {
+vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
   group = "YankHighlight",
   callback = function()
     vim.highlight.on_yank({ higroup = "YankedText", timeout = "150" })

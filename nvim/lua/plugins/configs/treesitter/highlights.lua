@@ -1,4 +1,4 @@
-local ternary = require("helpers").ternary
+local ternary = require("utils").ternary
 local constants = require("constants")
 local HAS_STRING_BACKGROUND = constants.HAS_STRING_BACKGROUND
 

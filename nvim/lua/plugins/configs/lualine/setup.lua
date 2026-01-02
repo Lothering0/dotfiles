@@ -1,9 +1,9 @@
-local highlight = require("helpers").highlight
+local highlight = require("utils").highlight
 local colors = require("themes/init")
-local helpers = require("helpers")
+local utils = require("utils")
 local constants = require("constants")
 local SHOW_PATH_TO_FILE = constants.SHOW_PATH_TO_FILE
-local ternary = helpers.ternary
+local ternary = utils.ternary
 
 local function set_mode_color(color, bg_color)
   local bg = bg_color or colors.contrast

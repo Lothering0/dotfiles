@@ -1,5 +1,5 @@
-local helpers = require("helpers")
-local get_path_to = helpers.get_config_path("indent_blankline")
+local utils = require("utils")
+local get_path_to = utils.get_config_path("indent_blankline")
 
 require(get_path_to "setup")
 

@@ -1,5 +1,5 @@
-local helpers = require("helpers")
-local get_path_to = helpers.get_config_path("noice")
+local utils = require("utils")
+local get_path_to = utils.get_config_path("noice")
 
 require(get_path_to "setup")
 

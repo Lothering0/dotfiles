@@ -1,6 +1,6 @@
 local VimMode = require("types").VimMode
-local helpers = require("helpers")
-local map = helpers.map
+local utils = require("utils")
+local map = utils.map
 
 -- Jump to the next/previous git change
 map(VimMode.NORMAL, "<C-S-n>", "<Plug>(GitGutterPrevHunk)")

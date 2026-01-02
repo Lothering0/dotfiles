@@ -1,6 +1,6 @@
 ---@type ConfigConstants
 local constants = require("constants")
-local ternary = require("helpers").ternary
+local ternary = require("utils").ternary
 local IS_CONTRAST = constants.IS_CONTRAST
 
 ---@type PluginHighlightsExport

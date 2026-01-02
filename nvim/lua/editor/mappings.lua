@@ -1,7 +1,7 @@
 local VimMode = require("types").VimMode
-local helpers = require("helpers")
-local map = helpers.map
-local is_surrounded = helpers.is_surrounded
+local utils = require("utils")
+local map = utils.map
+local is_surrounded = utils.is_surrounded
 
 -- Center the screen after jump on last line of file
 map(VimMode.NORMAL, "G", "Gzz")

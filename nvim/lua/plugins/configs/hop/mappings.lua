@@ -1,5 +1,5 @@
 local VimMode = require("types").VimMode
-local helpers = require("helpers")
-local map = helpers.map
+local utils = require("utils")
+local map = utils.map
 
 map(VimMode.NORMAL, "-", ":HopChar1<CR>")

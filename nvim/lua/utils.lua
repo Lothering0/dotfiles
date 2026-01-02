@@ -1,17 +1,11 @@
-local helpers = {
-  g = vim.g,
-  o = vim.opt,
-  c = vim.cmd,
-  augroup = vim.api.nvim_create_augroup, -- Create/get autocommand group
-  autocmd = vim.api.nvim_create_autocmd -- Create autocommand
-}
+local utils = {}
 
 ---@param mode VimMode
 ---@param key string
 ---@param rhs string
 ---@param noremap? boolean
 ---@param expr? boolean
-function helpers.map(mode, key, rhs, noremap, expr)
+function utils.map(mode, key, rhs, noremap, expr)
   noremap = noremap or true
   vim.api.nvim_set_keymap(mode, key, rhs, {
     silent = true,
@@ -23,7 +17,7 @@ end
 ---Highlights by group name
 ---@param name HighlightGroup Group name
 ---@param values HighlightOptions
-function helpers.highlight(name, values)
+function utils.highlight(name, values)
   vim.api.nvim_set_hl(0, name, values)
 end
 
@@ -31,7 +25,7 @@ end
 ---@param symbols string
 ---@nodiscard
 ---@return string
-function helpers.is_surrounded(symbols)
+function utils.is_surrounded(symbols)
   local vim_fn = 'getline(".")[col(".")-2:col(".")-1]'
 
   return vim_fn .. '=="' .. symbols .. '"'
@@ -39,7 +33,7 @@ end
 
 ---@param folder string
 ---@return fun(file: string): string
-function helpers.get_config_path(folder)
+function utils.get_config_path(folder)
   ---@param file string
   ---@return string
   ---@nodiscard
@@ -55,7 +49,7 @@ end
 ---@param if_false if_false
 ---@return if_true | if_false
 ---@nodiscard
-function helpers.ternary(condition, if_true, if_false)
+function utils.ternary(condition, if_true, if_false)
   if condition then return if_true end
   return if_false
 end
@@ -65,7 +59,7 @@ end
 ---@param value value
 ---@return boolean
 ---@nodiscard
-function helpers.includes(t, value)
+function utils.includes(t, value)
   for _, v in pairs(t) do
     if value == v then return true end
   end
@@ -75,7 +69,7 @@ end
 
 --- Calls function in 1 ms after initialization
 ---@param fn fun(): any
-function helpers.defer(fn)
+function utils.defer(fn)
   local timer = vim.loop.new_timer()
 
   timer:start(1, 0, vim.schedule_wrap(function()
@@ -84,4 +78,4 @@ function helpers.defer(fn)
   end))
 end
 
-return helpers
+return utils

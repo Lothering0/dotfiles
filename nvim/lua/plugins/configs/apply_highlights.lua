@@ -1,4 +1,4 @@
-local helpers = require("helpers")
+local utils = require("utils")
 local lume = require("lume")
 ---@type ThemeColors
 local colors = require("themes/init")
@@ -27,9 +27,9 @@ end
 ---@param plugins Plugin[]
 local function apply_highlights(plugins)
   local highlights = get_highlights(plugins)
-  helpers.defer(function()
+  utils.defer(function()
     for name, value in pairs(highlights) do
-      helpers.highlight(name, value)
+      utils.highlight(name, value)
     end
   end)
 end
