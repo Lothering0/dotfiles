@@ -1,4 +1,4 @@
-import { Json, Record, Option } from 'my-fp-ts'
+import { Option } from 'effect'
 
 export enum PlayerName {
   SPOTIFY = 'spotify',
@@ -32,8 +32,7 @@ export interface Song {
   readonly album: Option.Option<string>
 }
 
-export interface WaybarCustomModuleBody
-  extends Record.ReadonlyRecord<string, Json.Json> {
+export interface WaybarCustomModuleBody {
   readonly text: string
   readonly alt: string
   readonly tooltip: string

@@ -2,7 +2,7 @@ import tseslint from 'typescript-eslint'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['dist/*', 'my-fp-ts/*'] },
+  { ignores: ['dist/*'] },
   ...tseslint.configs.recommended,
   {
     rules: {

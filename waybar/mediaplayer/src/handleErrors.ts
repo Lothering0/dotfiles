@@ -1,28 +1,17 @@
-/* import {
-  pipe,
-  Json,
-  String,
-  Matching,
-  UnknownException,
-  Effect,
-  flow,
-} from 'my-fp-ts'
+/* import { String, Match, Effect, flow } from 'effect'
 import { appendFile } from './utils'
 import { main } from './main'
+import { UnknownException } from 'effect/Cause'
 
-const getErrorMessage = (e: Effect.Failures<typeof main>): string =>
-  pipe(
-    e,
-    Matching.match,
-    Matching.whenInstance(UnknownException, e =>
-      pipe(e.exception, Json.stringify),
-    ),
-    Matching.getOrElse((e: unknown) => pipe(e, Json.stringify)),
+const getErrorMessage = (e: Effect.Effect.Error<typeof main>): string =>
+  Match.value(e).pipe(
+    Match.when(Match.instanceOf(UnknownException), e => e.message),
+    Match.exhaustive,
   )
 
 export const handleErrors = flow(
   getErrorMessage,
-  String.prepend(`${new Date().toISOString()} [ERROR]: `),
-  String.append('\n'),
+  message => String.concat(`${new Date().toISOString()} [ERROR]: `, message),
+  String.concat('\n'),
   appendFile(`${__dirname}/../log.txt`),
 ) */

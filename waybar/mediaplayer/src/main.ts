@@ -1,10 +1,9 @@
-import { Effect, pipe } from 'my-fp-ts'
+import { Effect, pipe } from 'effect'
 import { currentInfo } from './commands'
 import { getBodyFromInfo, sendBody } from './utils'
 import { DEFAULT_BODY } from './constants'
 
-export const main = pipe(
-  currentInfo,
+export const main = currentInfo.pipe(
   Effect.map(getBodyFromInfo),
   Effect.tap(sendBody),
   Effect.catchTag('NoPlayerRunningException', () =>

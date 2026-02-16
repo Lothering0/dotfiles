@@ -1,10 +1,9 @@
-import { Effect, pipe } from 'my-fp-ts'
+import { Effect, Schedule } from 'effect'
 // import { handleErrors } from './handleErrors'
 import { main } from './main'
 
-pipe(
-  main,
-  // Effect.tapLeft(handleErrors),
-  Effect.schedule({ seconds: 2 }, { immediate: true }),
-  Effect.runAsync(),
+main.pipe(
+  // Effect.tapError(handleErrors),
+  Effect.repeat({ schedule: Schedule.spaced('2 seconds') }),
+  Effect.runPromise,
 )

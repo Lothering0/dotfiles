@@ -40,6 +40,6 @@
     "fallbackPolling": "dynamicPriority", // Poll for updates more frequently
     "excludeDirectories": ["**/node_modules"]
   },
-  "include": ["./my-fp-ts/**/*.d.ts", "./src/**/*.ts", "./test/**/*.ts"],
+  "include": ["./src/**/*.ts", "./test/**/*.ts"],
   "exclude": ["node_modules/**/*"]
 }

@@ -1,26 +1,24 @@
 import * as childProcess from 'node:child_process'
-import { Effect, pipe, Exception, Option } from 'my-fp-ts'
+import { Effect, pipe, Option, Data } from 'effect'
 import { promisify } from 'node:util'
 import { PLAYERS } from './constants'
 import { Info, PlayerName, PlayerStatus } from './types'
 
 export const runCommand = (command: string) =>
   pipe(
-    Effect.try(() => pipe(command, promisify(childProcess.exec))),
+    Effect.tryPromise(() => pipe(command, promisify(childProcess.exec))),
     Effect.map(({ stdout }) => String(stdout).trim()),
   )
 
 export const runCommandOption = (command: string) =>
-  pipe(
-    command,
-    runCommand,
+  runCommand(command).pipe(
     Effect.map(Option.some),
-    Effect.orElseSucceed(Option.none()),
+    Effect.orElseSucceed(Option.none),
   )
 
-export const currentStatus = pipe(
+export const currentStatus = runCommand(
   `playerctl --player=${PLAYERS} status`,
-  runCommand,
+).pipe(
   Effect.map(status =>
     status === PlayerStatus.PLAYING
       ? PlayerStatus.PLAYING
@@ -44,25 +42,23 @@ const isSpotifyRunning = runCommand('pgrep spotify')
 
 const isTelegramRunning = runCommand('pgrep Telegram')
 
-export const currentPlayer = pipe(
-  isSpotifyRunning,
+export const currentPlayer = isSpotifyRunning.pipe(
   Effect.as(PlayerName.SPOTIFY),
-  Effect.orElse(pipe(isTelegramRunning, Effect.as(PlayerName.TELEGRAM))),
+  Effect.orElse(() => isTelegramRunning.pipe(Effect.as(PlayerName.TELEGRAM))),
 )
 
-export class NoPlayerRunningException extends Exception.TaggedError(
+export class NoPlayerRunningException extends Data.TaggedError(
   'NoPlayerRunningException',
 ) {}
 
-export const currentInfo = pipe(
-  Effect.all([
-    currentStatus,
-    currentSongArtist,
-    currentSongTitle,
-    currentSongAlbum,
-    currentPlayer,
-  ]),
-  Effect.orElseFail(new NoPlayerRunningException()),
+export const currentInfo = Effect.all([
+  currentStatus,
+  currentSongArtist,
+  currentSongTitle,
+  currentSongAlbum,
+  currentPlayer,
+]).pipe(
+  Effect.orElseFail(() => new NoPlayerRunningException()),
   Effect.map(
     ([status, songArtist, songTitle, songAlbum, player]): Info => ({
       player,

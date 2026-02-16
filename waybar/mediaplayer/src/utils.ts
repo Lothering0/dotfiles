@@ -1,4 +1,4 @@
-import { identity, Effect, pipe, Json, Console, Option, Array } from 'my-fp-ts'
+import { identity, Effect, pipe, Console, Option, Array } from 'effect'
 import {
   Info,
   PlayerName,
@@ -20,11 +20,7 @@ const getAlt = (player: PlayerName, status: PlayerStatus) =>
 const getDescriptionPart = (
   title: string,
   optionValue: Option.Option<string>,
-) =>
-  pipe(
-    optionValue,
-    Option.map(value => `${title}:\n${value}`),
-  )
+) => optionValue.pipe(Option.map(value => `${title}:\n${value}`))
 
 const getDescription = (song: Song) =>
   pipe(
@@ -33,14 +29,14 @@ const getDescription = (song: Song) =>
       getDescriptionPart('Song', song.title),
       getDescriptionPart('Album', song.album),
     ],
-    Array.compact,
+    Array.getSomes,
     Array.join('\n\n'),
   )
 
 const getCssClass = identity<PlayerName>
 
 const getText = (song: Song) =>
-  pipe([song.artist, song.title], Array.compact, Array.join(' - '))
+  pipe([song.artist, song.title], Array.getSomes, Array.join(' - '))
 
 export const getBodyFromInfo = (info: Info): WaybarCustomModuleBody => ({
   text: getText(info.song),
@@ -51,4 +47,4 @@ export const getBodyFromInfo = (info: Info): WaybarCustomModuleBody => ({
 })
 
 export const sendBody = (body: WaybarCustomModuleBody) =>
-  pipe(body, Json.stringify, Console.log)
+  pipe(body, JSON.stringify, Console.log)
