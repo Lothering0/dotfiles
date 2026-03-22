@@ -5,6 +5,7 @@
   "diagnostic.hintSign": "\udb80\udf36",
   "suggest.virtualText": true,
   "tsserver.enable": true,
+  "tsserver.tsdk": "./node_modules/typescript/lib",
   "volar.takeOverMode.enabled": false,
   "coc": {
     "preferences": {
