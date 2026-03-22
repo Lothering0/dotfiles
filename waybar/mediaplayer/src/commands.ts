@@ -1,24 +1,22 @@
 import * as childProcess from 'node:child_process'
-import { Effect, pipe, Option, Data } from 'effect'
+import { Effect, pipe, Option, Data, Schema, Duration } from 'effect'
 import { promisify } from 'node:util'
 import { PLAYERS } from './constants'
 import { Info, PlayerName, PlayerStatus } from './types'
 
-export const runCommand = (command: string) =>
+const runCommand = (command: string) =>
   pipe(
     Effect.tryPromise(() => pipe(command, promisify(childProcess.exec))),
     Effect.map(({ stdout }) => String(stdout).trim()),
   )
 
-export const runCommandOption = (command: string) =>
+const runCommandOption = (command: string) =>
   runCommand(command).pipe(
     Effect.map(Option.some),
     Effect.orElseSucceed(Option.none),
   )
 
-export const currentStatus = runCommand(
-  `playerctl --player=${PLAYERS} status`,
-).pipe(
+const currentStatus = runCommand(`playerctl --player=${PLAYERS} status`).pipe(
   Effect.map(status =>
     status === PlayerStatus.PLAYING
       ? PlayerStatus.PLAYING
@@ -26,47 +24,79 @@ export const currentStatus = runCommand(
   ),
 )
 
-export const currentSongArtist = runCommandOption(
+const currentSongArtist = runCommandOption(
   `playerctl --player=${PLAYERS} metadata xesam:artist`,
 )
 
-export const currentSongTitle = runCommandOption(
+const currentSongTitle = runCommandOption(
   `playerctl --player=${PLAYERS} metadata xesam:title`,
 )
 
-export const currentSongAlbum = runCommandOption(
+const currentSongAlbum = runCommandOption(
   `playerctl --player=${PLAYERS} metadata xesam:album`,
 )
 
-const isSpotifyRunning = runCommand('pgrep spotify')
+const currentSongPosition = runCommandOption(
+  `playerctl --player=${PLAYERS} position`,
+).pipe(
+  Effect.andThen(Option.getOrElse(() => '')),
+  Effect.andThen(Schema.decode(Schema.NumberFromString)),
+  Effect.map(n => n * 1000),
+  Effect.map(Math.floor),
+  Effect.map(Duration.millis),
+)
 
+const currentSongLength = runCommandOption(
+  `playerctl --player=${PLAYERS} metadata mpris:length`,
+).pipe(
+  Effect.andThen(Option.getOrElse(() => '')),
+  Effect.andThen(Schema.decode(Schema.NumberFromString)),
+  Effect.map(n => n / 1000),
+  Effect.map(Duration.millis),
+)
+
+const isCmusRunning = runCommand('pgrep cmus')
+const isSpotifyRunning = runCommand('pgrep spotify')
 const isTelegramRunning = runCommand('pgrep Telegram')
 
-export const currentPlayer = isSpotifyRunning.pipe(
-  Effect.as(PlayerName.SPOTIFY),
+export const currentPlayer = isCmusRunning.pipe(
+  Effect.as(PlayerName.CMUS),
   Effect.orElse(() => isTelegramRunning.pipe(Effect.as(PlayerName.TELEGRAM))),
+  Effect.orElse(() => isSpotifyRunning.pipe(Effect.as(PlayerName.SPOTIFY))),
 )
 
 export class NoPlayerRunningException extends Data.TaggedError(
   'NoPlayerRunningException',
 ) {}
 
-export const currentInfo = Effect.all([
-  currentStatus,
-  currentSongArtist,
-  currentSongTitle,
-  currentSongAlbum,
-  currentPlayer,
-]).pipe(
+export const currentInfo = Effect.all({
+  status: currentStatus,
+  songArtist: currentSongArtist,
+  songTitle: currentSongTitle,
+  songAlbum: currentSongAlbum,
+  songPosition: currentSongPosition,
+  songLength: currentSongLength,
+  player: currentPlayer,
+}).pipe(
   Effect.orElseFail(() => new NoPlayerRunningException()),
   Effect.map(
-    ([status, songArtist, songTitle, songAlbum, player]): Info => ({
+    ({
+      player,
+      status,
+      songArtist,
+      songTitle,
+      songAlbum,
+      songPosition,
+      songLength,
+    }): Info => ({
       player,
       status,
       song: {
         artist: songArtist,
         title: songTitle,
         album: songAlbum,
+        position: songPosition,
+        length: songLength,
       },
     }),
   ),

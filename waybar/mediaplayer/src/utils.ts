@@ -1,4 +1,4 @@
-import { identity, Effect, pipe, Console, Option, Array } from 'effect'
+import { Effect, pipe, Console, Option, Array, Duration } from 'effect'
 import {
   Info,
   PlayerName,
@@ -33,7 +33,14 @@ const getDescription = (song: Song) =>
     Array.join('\n\n'),
   )
 
-const getCssClass = identity<PlayerName>
+const getProgressPercent = (song: Song) =>
+  pipe(
+    (Duration.toMillis(song.position) / Duration.toMillis(song.length)) * 100,
+    Math.floor,
+  )
+
+const getCssClass = (info: Info) =>
+  [info.player, `progress-${getProgressPercent(info.song)}`] as const
 
 const getText = (song: Song) =>
   pipe([song.artist, song.title], Array.getSomes, Array.join(' - '))
@@ -42,8 +49,8 @@ export const getBodyFromInfo = (info: Info): WaybarCustomModuleBody => ({
   text: getText(info.song),
   alt: getAlt(info.player, info.status),
   tooltip: getDescription(info.song),
-  class: getCssClass(info.player),
-  percentage: 50,
+  class: getCssClass(info),
+  percentage: getProgressPercent(info.song),
 })
 
 export const sendBody = (body: WaybarCustomModuleBody) =>

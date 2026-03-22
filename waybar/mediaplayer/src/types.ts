@@ -1,13 +1,15 @@
-import { Option } from 'effect'
+import { Duration, Option, Array } from 'effect'
 
 export enum PlayerName {
   SPOTIFY = 'spotify',
   TELEGRAM = 'telegram',
+  CMUS = 'cmus',
 }
 
 export enum PlayerCliName {
   SPOTIFY = 'spotify',
   TELEGRAM = 'TelegramDesktop',
+  CMUS = 'cmus',
 }
 
 export enum PlayerStatus {
@@ -30,12 +32,14 @@ export interface Song {
   readonly artist: Option.Option<string>
   readonly title: Option.Option<string>
   readonly album: Option.Option<string>
+  readonly position: Duration.Duration
+  readonly length: Duration.Duration
 }
 
 export interface WaybarCustomModuleBody {
   readonly text: string
   readonly alt: string
   readonly tooltip: string
-  readonly class: string
+  readonly class: Array.NonEmptyReadonlyArray<string>
   readonly percentage: number
 }
