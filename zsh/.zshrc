@@ -10,6 +10,7 @@ export EDITOR=nvim
 export KEYTIMEOUT=1
 export NEOVIDE_MULTIGRID=true
 
+source /usr/share/nvm/init-nvm.sh --no-use
 source ~/dotfiles/zsh/.colors.zsh
 
 if [ -f ~/dotfiles/zsh/.aliases.zsh ]; then
