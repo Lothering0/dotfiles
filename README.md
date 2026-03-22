@@ -49,6 +49,7 @@ NL - no ligatures
 * **Postman** - make API requests
 * **Dbeaver** - database manager
 * **Obsidian** - notes
+* **[cmus](https://github.com/cmus/cmus)** - C* Music Player with VIM keybindings
 
 # Optional packages
 * **Aspnet-runtime**, **dotnet-sdk** - to work with C#
