@@ -61,8 +61,8 @@ const isTelegramRunning = runCommand('pgrep Telegram')
 
 export const currentPlayer = isCmusRunning.pipe(
   Effect.as(PlayerName.CMUS),
-  Effect.orElse(() => isTelegramRunning.pipe(Effect.as(PlayerName.TELEGRAM))),
   Effect.orElse(() => isSpotifyRunning.pipe(Effect.as(PlayerName.SPOTIFY))),
+  Effect.orElse(() => isTelegramRunning.pipe(Effect.as(PlayerName.TELEGRAM))),
 )
 
 export class NoPlayerRunningException extends Data.TaggedError(
