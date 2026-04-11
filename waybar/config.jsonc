@@ -192,7 +192,6 @@
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
-        "max-length": 40,
         "format-icons": {
             "spotify-playing": "   ",
             "spotify-paused": "   ",
@@ -203,11 +202,16 @@
             "default": "󰝚 "
         },
         "on-click": "playerctl --player=spotify,TelegramDesktop,cmus play-pause",
-        "on-scroll-up": "playerctl --player=spotify,TelegramDesktop,cmus previous",
-        "on-scroll-down": "playerctl --player=spotify,TelegramDesktop,cmus next",
         "restart-interval": 300, // Every 5 minutes
         "escape": true,
-        "exec": "node $HOME/dotfiles/waybar/mediaplayer/dist/index.cjs 2> /dev/null" // Script in resources folder
+        "exec": "node $HOME/dotfiles/waybar/mediaplayer/dist/index.cjs 2> /dev/null", // Script in resources folder
+        "menu": "on-click-right",
+        "menu-file": "~/dotfiles/waybar/mediaplayer/menu.xml",
+        "menu-actions": {
+            "pause": "playerctl --player=spotify,TelegramDesktop,cmus play-pause",
+            "previous": "playerctl --player=spotify,TelegramDesktop,cmus previous",
+            "next": "playerctl --player=spotify,TelegramDesktop,cmus next"
+        }
     },
     "custom/power": {
         "format" : "⏻ ",
