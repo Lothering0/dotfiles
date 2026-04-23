@@ -1,9 +1,6 @@
 local colors = require("themes/init")
 
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
+require'nvim-treesitter.config'.setup {
   indent = {
     enable = true
   },
@@ -17,3 +14,13 @@ require'nvim-treesitter.configs'.setup {
     colors = { colors.yellow, colors.purple, colors.cyan }
   }
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'javascript',
+    'typescript',
+    'javascriptreact',
+    'typescriptreact',
+  },
+  callback = function() vim.treesitter.start() end,
+})

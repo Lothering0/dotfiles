@@ -52,6 +52,7 @@ return packer.startup(function()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    branch = "main",
     -- To install: typescript javascript jsdoc lua luadoc haskell vue
   }
 
