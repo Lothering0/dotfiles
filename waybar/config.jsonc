@@ -197,8 +197,8 @@
             "spotify-paused": "   ",
             "telegram-playing": "   ",
             "telegram-paused": "   ",
-            "cmus-playing": "󰝚   ",
-            "cmus-paused": "󰝚   ",
+            "cmus-playing": " ",
+            "cmus-paused": " ",
             "default": "󰝚 "
         },
         "on-click": "playerctl --player=spotify,TelegramDesktop,cmus play-pause",

@@ -115,21 +115,18 @@ const currentInfo = pipe(
 pipe(
   currentInfo,
   Effect.bindTo('info'),
-  Effect.let('progressPercent', ({ info }) =>
-    pipe(
-      Duration.toMillis(info.song.position),
-      n => n / Duration.toMillis(info.song.length),
-      n => n * 100,
-      Math.floor,
-    ),
+  Effect.let('positionMs', ({ info }) => Duration.toMillis(info.song.position)),
+  Effect.let('lengthMs', ({ info }) => Duration.toMillis(info.song.length)),
+  Effect.let('progressPercent', ({ positionMs, lengthMs }) =>
+    Math.floor((positionMs / lengthMs) * 100),
   ),
   Effect.map(({ info, progressPercent }) => ({
     text: Array.getSomes([info.song.artist, info.song.title]).join(' - '),
     alt: info.isPlaying ? `${info.player}-playing` : `${info.player}-paused`,
     tooltip: Array.getSomes([
-      info.song.artist.pipe(Option.map(value => `Artist:\n${value}`)),
-      info.song.title.pipe(Option.map(value => `Song:\n${value}`)),
-      info.song.album.pipe(Option.map(value => `Album:\n${value}`)),
+      info.song.artist.pipe(Option.map(artist => `Artist:\n${artist}`)),
+      info.song.title.pipe(Option.map(song => `Song:\n${song}`)),
+      info.song.album.pipe(Option.map(album => `Album:\n${album}`)),
     ]).join('\n\n'),
     class: [info.player, `progress-${progressPercent}`] as const,
     percentage: progressPercent,
