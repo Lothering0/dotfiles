@@ -50,6 +50,7 @@ NL - no ligatures
 * **Dbeaver** - database manager
 * **Obsidian** - notes
 * **[cmus](https://github.com/cmus/cmus)** - C* Music Player with VIM keybindings
+* **[cava](https://github.com/karlstav/cavahttps://github.com/karlstav/cava)** - Cross-platform Audio Visualizer
 
 # Optional packages
 * **Aspnet-runtime**, **dotnet-sdk** - to work with C#

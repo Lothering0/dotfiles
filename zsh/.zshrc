@@ -26,6 +26,7 @@ alias neofetch="neofetch --config ~/dotfiles/neofetch/config.conf"
 alias fastfetch="fastfetch -c ~/dotfiles/fastfetch/config.jsonc"
 alias code="code --disable-features=SendMouseLeaveEvents"
 alias ghci="ghci -ghci-script ~/dotfiles/ghc/ghci.conf"
+alias cava="cava -p ~/dotfiles/cava/config"
 alias js="node ~/projects/pets/repl/index.js"  # https://github.com/Lothering0/repl
 
 alias dt="cd ~/dotfiles"
